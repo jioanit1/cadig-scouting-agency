@@ -1,721 +1,726 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>CADIG Scouting Agency | Hockey Scouting & Intelligence</title>
 
-  <meta name="description"
-        content="CADIG Scouting Agency combines hockey scouting, analytics and player intelligence to evaluate talent and understand development pathways.">
+  <meta
+    name="description"
+    content="CADIG Scouting Agency combines hockey scouting, analytics, player intelligence, development-pathway research and league intelligence."
+  />
 
   <style>
-    :root {
-      --black: #080808;
-      --white: #ffffff;
-      --offwhite: #f5f5f2;
-      --blue: #138ad3;
-      --darkblue: #092844;
-      --gray: #6d6d6d;
-      --line: #d8d8d8;
+    :root{
+      --navy:#123b62;
+      --navy-dark:#071c30;
+      --navy-mid:#0b2e4c;
+      --blue:#1486d4;
+      --blue-light:#5fb9ef;
+      --ice:#eef5fa;
+      --silver:#c8ced4;
+      --ink:#111820;
+      --muted:#66717c;
+      --line:#d9e0e5;
+      --white:#ffffff;
+      --offwhite:#f5f7f8;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
 
-    html {
-      scroll-behavior: smooth;
+    html{
+      scroll-behavior:smooth;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
-      color: var(--black);
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.55;
     }
 
-    a {
-      color: inherit;
+    a{
+      color:inherit;
     }
 
-    /* ---------------- NAV ---------------- */
-
-    .nav {
-      height: 88px;
-      background: white;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid #e4e4e4;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    img{
+      max-width:100%;
+      display:block;
     }
 
-    .nav-inner {
-      width: min(1400px, calc(100% - 64px));
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .wrap{
+      width:min(1400px,calc(100% - 64px));
+      margin:auto;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: 1.8px;
-      text-decoration: none;
+    section{
+      padding:120px 0;
     }
 
-    .logo span {
-      color: var(--blue);
+    .label{
+      text-transform:uppercase;
+      letter-spacing:2.5px;
+      font-size:12px;
+      font-weight:800;
+      color:var(--blue);
+      margin-bottom:16px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 34px;
-      align-items: center;
+    .title{
+      font-size:clamp(44px,5.5vw,82px);
+      line-height:.98;
+      letter-spacing:-3px;
+      margin-bottom:28px;
+      color:var(--navy-dark);
     }
 
-    .nav-links a {
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .6px;
-      text-transform: uppercase;
+    .lead{
+      font-size:20px;
+      max-width:900px;
+      color:#3d4b56;
     }
 
-    .nav-links a:hover {
-      color: var(--blue);
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav{
+      height:92px;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
 
+    .nav-inner{
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
 
-    /* ---------------- HERO ---------------- */
+    .brand{
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      gap:14px;
+    }
 
-    .hero {
-      min-height: 92vh;
+    .brand img{
+      height:62px;
+      width:auto;
+    }
+
+    .brand-copy{
+      font-weight:900;
+      letter-spacing:1.4px;
+      font-size:16px;
+      line-height:1.1;
+      color:var(--navy);
+    }
+
+    .brand-copy span{
+      display:block;
+      color:var(--blue);
+      font-size:11px;
+      letter-spacing:2px;
+      margin-top:5px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:26px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      text-transform:uppercase;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.8px;
+    }
+
+    .nav-links a:hover{
+      color:var(--blue);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      min-height:90vh;
       background:
         linear-gradient(
-          90deg,
-          rgba(0,0,0,.76) 0%,
-          rgba(0,0,0,.48) 45%,
-          rgba(0,0,0,.12) 100%
+          110deg,
+          rgba(5,25,43,.97),
+          rgba(12,55,90,.89) 56%,
+          rgba(20,134,212,.66)
         ),
-        url("hero-hockey.jpg") center/cover no-repeat,
-        #101820;
+        url("hero-hockey.jpg") center/cover no-repeat;
 
-      display: flex;
-      align-items: flex-end;
-      color: white;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
     }
 
-    .hero-inner {
-      width: min(1400px, calc(100% - 64px));
-      margin: auto;
-      padding-bottom: 85px;
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:620px;
+      height:620px;
+      border-radius:50%;
+      right:-160px;
+      top:50%;
+      transform:translateY(-50%);
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:
+        0 0 0 90px rgba(255,255,255,.025),
+        0 0 0 180px rgba(255,255,255,.02);
     }
 
-    .kicker {
-      text-transform: uppercase;
-      letter-spacing: 3.5px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 20px;
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:70px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+      padding:90px 0;
     }
 
-    .hero h1 {
-      max-width: 1000px;
-      font-size: clamp(58px, 8vw, 118px);
-      line-height: .91;
-      letter-spacing: -5px;
-      font-weight: 800;
-      margin-bottom: 32px;
+    .eyebrow{
+      text-transform:uppercase;
+      letter-spacing:3px;
+      font-size:12px;
+      font-weight:800;
+      color:#83c9f5;
+      margin-bottom:22px;
     }
 
-    .hero h1 span {
-      color: #3ba4e5;
+    .hero h1{
+      font-size:clamp(56px,7vw,110px);
+      line-height:.92;
+      letter-spacing:-5px;
+      margin-bottom:30px;
+      max-width:900px;
     }
 
-    .hero-copy {
-      max-width: 650px;
-      font-size: 20px;
-      line-height: 1.55;
-      color: rgba(255,255,255,.86);
+    .hero h1 span{
+      color:#54b3ed;
     }
 
-
-    /* ---------------- INTRO ---------------- */
-
-    .intro {
-      padding: 130px 32px;
+    .hero p{
+      font-size:20px;
+      color:#d6e4ee;
+      max-width:720px;
     }
 
-    .content {
-      max-width: 1400px;
-      margin: auto;
+    .hero-logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
-    .intro-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.4fr;
-      gap: 100px;
+    .hero-logo img{
+      width:min(480px,100%);
+      background:rgba(255,255,255,.96);
+      padding:30px;
+      filter:drop-shadow(0 18px 40px rgba(0,0,0,.25));
     }
 
-    .small-heading {
-      font-size: 14px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--blue);
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:90px;
     }
 
-    .intro h2 {
-      font-size: clamp(44px, 5vw, 78px);
-      line-height: 1;
-      letter-spacing: -3px;
-      margin-bottom: 35px;
+    .about-copy p{
+      font-size:19px;
+      color:#3b4650;
+      margin-bottom:20px;
+      max-width:850px;
     }
 
-    .intro p {
-      font-size: 20px;
-      line-height: 1.7;
-      color: #353535;
-      margin-bottom: 20px;
-      max-width: 850px;
-    }
+    /* =========================
+       IMAGE BREAK
+    ========================= */
 
-
-    /* ---------------- IMAGE BREAK ---------------- */
-
-    .image-break {
-      min-height: 70vh;
+    .image-break{
+      min-height:62vh;
       background:
-        linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)),
+        linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.20)),
         url("rink-scouting.jpg") center/cover no-repeat,
-        #192633;
+        #172839;
     }
 
+    /* =========================
+       WHAT WE DO
+    ========================= */
 
-    /* ---------------- WHAT WE DO ---------------- */
-
-    .what-we-do {
-      padding: 130px 32px;
-      background: var(--offwhite);
+    .services{
+      background:var(--offwhite);
     }
 
-    .section-head {
-      display: grid;
-      grid-template-columns: .8fr 1.4fr;
-      gap: 100px;
-      margin-bottom: 80px;
+    .service{
+      display:grid;
+      grid-template-columns:80px .85fr 1.45fr;
+      gap:40px;
+      padding:42px 0;
+      border-top:1px solid #cbd4db;
     }
 
-    .section-head h2 {
-      font-size: clamp(50px, 6vw, 86px);
-      line-height: .95;
-      letter-spacing: -4px;
+    .service:last-child{
+      border-bottom:1px solid #cbd4db;
     }
 
-    .service {
-      display: grid;
-      grid-template-columns: 80px 1fr 1.3fr;
-      gap: 45px;
-      padding: 48px 0;
-      border-top: 1px solid #bcbcbc;
+    .service-no{
+      font-size:13px;
+      color:var(--blue);
+      font-weight:900;
     }
 
-    .service:last-child {
-      border-bottom: 1px solid #bcbcbc;
+    .service h3{
+      font-size:29px;
+      color:var(--navy-dark);
+      line-height:1.1;
     }
 
-    .service-number {
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--blue);
+    .service p{
+      font-size:18px;
+      color:#56616b;
+      max-width:720px;
     }
 
-    .service h3 {
-      font-size: 30px;
-      line-height: 1.1;
+    /* =========================
+       STATEMENT
+    ========================= */
+
+    .statement{
+      background:var(--navy);
+      color:#fff;
     }
 
-    .service p {
-      font-size: 18px;
-      line-height: 1.65;
-      color: #555;
-      max-width: 650px;
+    .statement h2{
+      font-size:clamp(52px,7vw,100px);
+      max-width:1250px;
+      line-height:.98;
+      letter-spacing:-4px;
     }
 
-
-    /* ---------------- STATEMENT ---------------- */
-
-    .statement {
-      background: var(--darkblue);
-      color: white;
-      padding: 140px 32px;
+    .statement span{
+      color:#5fb9ef;
     }
 
-    .statement-inner {
-      max-width: 1400px;
-      margin: auto;
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      margin-top:60px;
+      border-top:1px solid var(--line);
     }
 
-    .statement h2 {
-      font-size: clamp(52px, 7vw, 100px);
-      max-width: 1250px;
-      line-height: .98;
-      letter-spacing: -4px;
+    .process-item{
+      min-height:310px;
+      padding:30px;
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
     }
 
-    .statement h2 span {
-      color: #4eaae1;
+    .process-item:first-child{
+      border-left:1px solid var(--line);
     }
 
-
-    /* ---------------- PROCESS ---------------- */
-
-    .process {
-      padding: 130px 32px;
+    .process-no{
+      color:var(--blue);
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:95px;
     }
 
-    .process-title {
-      font-size: clamp(48px, 6vw, 82px);
-      letter-spacing: -4px;
-      line-height: 1;
-      margin: 15px 0 80px;
+    .process-item h3{
+      font-size:25px;
+      margin-bottom:15px;
+      color:var(--navy-dark);
     }
 
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--line);
+    .process-item p{
+      color:var(--muted);
     }
 
-    .process-item {
-      min-height: 310px;
-      padding: 30px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    /* =========================
+       HOCKEY INTELLIGENCE
+    ========================= */
+
+    .intelligence{
+      background:var(--navy-dark);
+      color:#fff;
     }
 
-    .process-item:first-child {
-      border-left: 1px solid var(--line);
+    .intelligence .title{
+      color:#fff;
     }
 
-    .process-no {
-      color: var(--blue);
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 95px;
+    .intelligence .lead{
+      color:#c4d5e1;
     }
 
-    .process-item h3 {
-      font-size: 25px;
-      margin-bottom: 15px;
+    .intel-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      background:rgba(255,255,255,.16);
+      margin-top:65px;
     }
 
-    .process-item p {
-      color: var(--gray);
-      line-height: 1.6;
-      font-size: 16px;
+    .intel-card{
+      background:var(--navy-mid);
+      padding:38px;
+      min-height:300px;
     }
 
-
-    /* ---------------- INTELLIGENCE ---------------- */
-
-    .intelligence {
-      padding: 130px 32px;
-      background: #080808;
-      color: white;
+    .intel-card .num{
+      font-size:12px;
+      font-weight:900;
+      color:var(--blue-light);
+      margin-bottom:80px;
     }
 
-    .intelligence-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.3fr;
-      gap: 90px;
+    .intel-card h3{
+      font-size:24px;
+      margin-bottom:14px;
     }
 
-    .intelligence h2 {
-      font-size: clamp(50px, 6vw, 84px);
-      line-height: .95;
-      letter-spacing: -4px;
+    .intel-card p{
+      color:#b9cad7;
     }
 
-    .intel-list {
-      border-top: 1px solid #444;
+    /* =========================
+       FRAMEWORK
+    ========================= */
+
+    .framework-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:start;
     }
 
-    .intel-row {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 40px;
-      padding: 30px 0;
-      border-bottom: 1px solid #444;
+    .framework-list{
+      border-top:1px solid var(--line);
     }
 
-    .intel-row strong {
-      font-size: 20px;
+    .framework-row{
+      display:grid;
+      grid-template-columns:1fr 1.5fr;
+      gap:30px;
+      padding:26px 0;
+      border-bottom:1px solid var(--line);
     }
 
-    .intel-row span {
-      color: #ababab;
-      line-height: 1.6;
+    .framework-row strong{
+      color:var(--navy);
+      font-size:18px;
     }
 
-
-    /* ---------------- COVERAGE ---------------- */
-
-    .coverage {
-      padding: 130px 32px;
+    .framework-row span{
+      color:#5b6670;
     }
 
-    .coverage h2 {
-      font-size: clamp(50px, 6vw, 84px);
-      line-height: 1;
-      letter-spacing: -4px;
-      margin: 18px 0 65px;
+    /* =========================
+       RESEARCH
+    ========================= */
+
+    .research{
+      background:var(--ice);
     }
 
-    .coverage-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: #ddd;
+    .report-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      margin-top:65px;
     }
 
-    .coverage-card {
-      background: white;
-      padding: 42px;
-      min-height: 280px;
+    .report-card{
+      background:#fff;
+      min-height:460px;
+      display:flex;
+      flex-direction:column;
+      border:1px solid #d5e0e8;
     }
 
-    .coverage-card h3 {
-      font-size: 28px;
-      margin-bottom: 24px;
+    .report-art{
+      height:245px;
+      background:linear-gradient(145deg,var(--navy-dark),var(--blue));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
     }
 
-    .coverage-card p {
-      color: var(--gray);
-      font-size: 17px;
-      line-height: 1.75;
+    .report-art img{
+      max-height:190px;
+      max-width:75%;
+      background:#fff;
+      padding:14px;
     }
 
-
-    /* ---------------- RESEARCH ---------------- */
-
-    .research {
-      padding: 130px 32px;
-      background: var(--offwhite);
+    .report-copy{
+      padding:34px;
     }
 
-    .research-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      align-items: flex-end;
-      margin-bottom: 70px;
+    .report-type{
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:var(--blue);
+      font-size:11px;
+      font-weight:900;
     }
 
-    .research h2 {
-      font-size: clamp(50px, 6vw, 84px);
-      line-height: 1;
-      letter-spacing: -4px;
+    .report-card h3{
+      font-size:29px;
+      color:var(--navy-dark);
+      margin:10px 0 12px;
     }
 
-    .report-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
+    .report-card p{
+      color:#5a6670;
     }
 
-    .report {
-      background: white;
-      min-height: 520px;
-      display: flex;
-      flex-direction: column;
+    /* =========================
+       COVERAGE
+    ========================= */
+
+    .coverage-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      background:#d6dde3;
+      margin-top:60px;
     }
 
-    .report-image {
-      height: 300px;
+    .coverage-card{
+      background:#fff;
+      padding:38px;
+      min-height:245px;
+    }
+
+    .coverage-card h3{
+      font-size:27px;
+      color:var(--navy);
+      margin-bottom:20px;
+    }
+
+    .coverage-card p{
+      color:#5f6a74;
+      line-height:1.75;
+    }
+
+    /* =========================
+       TEAM
+    ========================= */
+
+    .team{
+      background:#fff;
+    }
+
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+      margin-top:65px;
+    }
+
+    .team-card{
+      border-top:2px solid var(--navy);
+      padding-top:25px;
+      min-height:260px;
+    }
+
+    .team-card h3{
+      font-size:28px;
+      color:var(--navy-dark);
+      margin-bottom:8px;
+    }
+
+    .team-role{
+      color:var(--blue);
+      text-transform:uppercase;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:1.2px;
+      margin-bottom:22px;
+    }
+
+    .team-card p{
+      color:#5f6870;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact{
+      min-height:68vh;
       background:
-        linear-gradient(145deg, #082943, #157db8);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .report-image::after {
-      content: "CADIG";
-      position: absolute;
-      bottom: -18px;
-      right: 18px;
-      color: rgba(255,255,255,.12);
-      font-weight: 900;
-      font-size: 100px;
-    }
-
-    .report-copy {
-      padding: 35px;
-    }
-
-    .report-type {
-      color: var(--blue);
-      text-transform: uppercase;
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: 800;
-    }
-
-    .report h3 {
-      font-size: 30px;
-      margin: 12px 0;
-    }
-
-    .report p {
-      color: #666;
-      line-height: 1.65;
-    }
-
-
-    /* ---------------- NUMBERS ---------------- */
-
-    .numbers {
-      background: var(--blue);
-      color: white;
-      padding: 120px 32px;
-    }
-
-    .numbers h2 {
-      font-size: clamp(48px, 6vw, 80px);
-      letter-spacing: -4px;
-      margin-bottom: 75px;
-    }
-
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .number-card {
-      padding: 45px;
-      border-top: 1px solid rgba(255,255,255,.5);
-      border-right: 1px solid rgba(255,255,255,.35);
-    }
-
-    .number-card:last-child {
-      border-right: none;
-    }
-
-    .number-card strong {
-      display: block;
-      font-size: 46px;
-      margin-bottom: 10px;
-    }
-
-    .number-card span {
-      font-size: 17px;
-    }
-
-
-    /* ---------------- TEAM ---------------- */
-
-    .team {
-      padding: 130px 32px;
-    }
-
-    .team h2 {
-      font-size: clamp(50px, 6vw, 84px);
-      letter-spacing: -4px;
-      margin: 15px 0 70px;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .team-card {
-      border-top: 1px solid #aaa;
-      padding-top: 25px;
-      min-height: 260px;
-    }
-
-    .team-card h3 {
-      font-size: 27px;
-      margin-bottom: 7px;
-    }
-
-    .team-role {
-      color: var(--blue);
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 25px;
-    }
-
-    .team-card p {
-      color: #666;
-      line-height: 1.65;
-    }
-
-
-    /* ---------------- CONTACT ---------------- */
-
-    .contact {
-      min-height: 70vh;
-      background:
-        linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+        linear-gradient(rgba(5,20,34,.85),rgba(5,20,34,.88)),
         url("contact-rink.jpg") center/cover no-repeat,
-        #111;
+        var(--navy-dark);
 
-      color: white;
-      display: flex;
-      align-items: center;
-      padding: 100px 32px;
+      color:#fff;
+      display:flex;
+      align-items:center;
     }
 
-    .contact-inner {
-      max-width: 1400px;
-      width: 100%;
-      margin: auto;
+    .contact .title{
+      color:#fff;
     }
 
-    .contact h2 {
-      font-size: clamp(60px, 8vw, 115px);
-      line-height: .9;
-      letter-spacing: -5px;
-      max-width: 1000px;
-      margin-bottom: 40px;
+    .contact .lead{
+      color:#cadce8;
     }
 
-    .contact p {
-      max-width: 700px;
-      color: #ccc;
-      font-size: 19px;
-      line-height: 1.65;
-      margin-bottom: 40px;
+    .cta{
+      display:inline-block;
+      margin-top:34px;
+      padding:16px 25px;
+      border:1px solid #fff;
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:12px;
+      font-weight:900;
+      transition:.2s ease;
     }
 
-    .cta {
-      display: inline-block;
-      border: 1px solid white;
-      padding: 17px 28px;
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 12px;
-      font-weight: 800;
-      transition: .25s;
+    .cta:hover{
+      background:#fff;
+      color:var(--navy-dark);
     }
 
-    .cta:hover {
-      background: white;
-      color: black;
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      background:#061625;
+      color:#95a9b8;
+      padding:38px 0;
+      font-size:13px;
     }
 
-
-    /* ---------------- FOOTER ---------------- */
-
-    footer {
-      background: #050505;
-      color: white;
-      padding: 55px 32px;
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
     }
 
-    .footer-inner {
-      max-width: 1400px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-    }
+    /* =========================
+       MOBILE
+    ========================= */
 
-    .footer-brand {
-      font-size: 20px;
-      font-weight: 800;
-    }
+    @media(max-width:900px){
 
-    .footer-small {
-      color: #888;
-      font-size: 13px;
-    }
-
-
-    /* ---------------- MOBILE ---------------- */
-
-    @media (max-width: 900px) {
-
-      .nav-inner,
-      .hero-inner {
-        width: calc(100% - 40px);
+      .wrap{
+        width:min(100% - 36px,1400px);
       }
 
-      .nav-links {
-        display: none;
+      .nav-links{
+        display:none;
       }
 
-      .intro-grid,
-      .section-head,
-      .intelligence-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
+      .brand img{
+        height:52px;
       }
 
-      .service {
-        grid-template-columns: 45px 1fr;
+      .hero-grid,
+      .about-grid,
+      .framework-grid{
+        grid-template-columns:1fr;
       }
 
-      .service p {
-        grid-column: 2;
+      .hero h1{
+        letter-spacing:-2px;
+      }
+
+      .hero-logo{
+        justify-content:flex-start;
+      }
+
+      .hero-logo img{
+        max-width:340px;
+      }
+
+      .service{
+        grid-template-columns:45px 1fr;
+      }
+
+      .service p{
+        grid-column:2;
       }
 
       .process-grid,
+      .intel-grid,
       .coverage-grid,
-      .numbers-grid,
-      .team-grid,
-      .report-grid {
-        grid-template-columns: 1fr;
+      .report-grid,
+      .team-grid{
+        grid-template-columns:1fr;
       }
 
-      .process-item {
-        border-left: 1px solid var(--line);
+      .process-item{
+        border-left:1px solid var(--line);
       }
 
-      .number-card {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,.35);
-      }
-
-      .hero h1,
-      .contact h2 {
-        letter-spacing: -2px;
+      .footer-inner{
+        flex-direction:column;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
-  <nav class="nav">
-    <div class="nav-inner">
+  <nav>
+    <div class="wrap nav-inner">
 
-      <a href="#" class="logo">
-        CADIG <span>SCOUTING</span>
+      <a href="#top" class="brand">
+        <img src="cadig-logo.png" alt="CADIG Scouting Agency logo" />
+
+        <div class="brand-copy">
+          CADIG SCOUTING AGENCY
+          <span>HOCKEY INTELLIGENCE</span>
+        </div>
       </a>
 
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#services">Scouting</a>
+        <a href="#scouting">Scouting</a>
         <a href="#intelligence">Intelligence</a>
-        <a href="#coverage">Coverage</a>
+        <a href="#framework">Framework</a>
         <a href="#research">Research</a>
+        <a href="#coverage">Coverage</a>
         <a href="#team">Team</a>
         <a href="#contact">Contact</a>
       </div>
@@ -723,69 +728,77 @@
     </div>
   </nav>
 
+  <!-- =========================
+       HERO
+  ========================= -->
 
-  <!-- HERO -->
+  <header class="hero" id="top">
 
-  <header class="hero">
+    <div class="wrap hero-grid">
 
-    <div class="hero-inner">
+      <div>
 
-      <div class="kicker">
-        Hockey Scouting • Analytics • Player Intelligence
+        <div class="eyebrow">
+          Hockey Scouting • Analytics • Player Intelligence
+        </div>
+
+        <h1>
+          SCOUTING.<br>
+          INTELLIGENCE.<br>
+          <span>PROJECTION.</span>
+        </h1>
+
+        <p>
+          Independent hockey scouting and intelligence built to evaluate
+          players, understand development pathways, compare competitive
+          environments and provide deeper context around the game.
+        </p>
+
       </div>
 
-      <h1>
-        SEE THE PLAYER.<br>
-        <span>UNDERSTAND THE PATH.</span>
-      </h1>
-
-      <p class="hero-copy">
-        Independent hockey scouting and intelligence built to evaluate talent,
-        contextualize performance and better understand where a player's game
-        can go next.
-      </p>
+      <div class="hero-logo">
+        <img src="cadig-logo.png" alt="CADIG Scouting Agency" />
+      </div>
 
     </div>
 
   </header>
 
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
-  <!-- ABOUT -->
+  <section id="about">
 
-  <section class="intro" id="about">
+    <div class="wrap about-grid">
 
-    <div class="content">
+      <div>
+        <div class="label">About CADIG</div>
+      </div>
 
-      <div class="intro-grid">
+      <div class="about-copy">
 
-        <div>
-          <div class="small-heading">About CADIG</div>
-        </div>
+        <h2 class="title">
+          A deeper view of hockey talent.
+        </h2>
 
-        <div>
+        <p>
+          CADIG Scouting Agency is an independent hockey scouting and analytics
+          organization focused on player evaluation, development pathways,
+          league intelligence and career outcomes.
+        </p>
 
-          <h2>
-            A deeper view of hockey talent.
-          </h2>
+        <p>
+          Our approach combines traditional scouting, video assessment,
+          statistical analysis and historical player-development research
+          to create structured, repeatable evaluations.
+        </p>
 
-          <p>
-            CADIG Scouting Agency is an independent hockey scouting and analytics
-            organization focused on player evaluation, development pathways and
-            league intelligence.
-          </p>
-
-          <p>
-            We combine structured scouting observations with statistical context
-            and development research to build more complete player evaluations.
-          </p>
-
-          <p>
-            The objective is simple: understand not only what a player has done,
-            but how the player plays, the environment in which that performance
-            occurred and where the player's skill set may translate next.
-          </p>
-
-        </div>
+        <p>
+          The objective is not only to understand what a player has produced,
+          but how the player plays, the level and environment in which that
+          performance occurred, and where that skill set may translate next.
+        </p>
 
       </div>
 
@@ -793,158 +806,151 @@
 
   </section>
 
-
-  <!-- VISUAL BREAK -->
+  <!-- =========================
+       IMAGE BREAK
+  ========================= -->
 
   <div class="image-break"></div>
 
+  <!-- =========================
+       SCOUTING / WHAT WE DO
+  ========================= -->
 
-  <!-- WHAT WE DO -->
+  <section class="services" id="scouting">
 
-  <section class="what-we-do" id="services">
+    <div class="wrap">
 
-    <div class="content">
+      <div class="label">What We Do</div>
 
-      <div class="section-head">
+      <h2 class="title">
+        Evaluation beyond the scoresheet.
+      </h2>
 
-        <div class="small-heading">
-          What We Do
-        </div>
-
-        <h2>
-          A complete evaluation approach.
-        </h2>
-
-      </div>
-
+      <p class="lead">
+        CADIG combines observation and structured evidence across four
+        connected areas of hockey evaluation.
+      </p>
 
       <div class="service">
-
-        <div class="service-number">01</div>
+        <div class="service-no">01</div>
 
         <h3>Player Scouting</h3>
 
         <p>
-          Live and video evaluation using a standardized framework covering
-          skating, hockey intelligence, puck skills, offensive impact,
-          defensive reliability, compete level and long-term projection.
+          Live and video evaluation focused on skating, hockey intelligence,
+          puck skills, offensive impact, defensive reliability,
+          competitiveness and long-term projection.
         </p>
-
       </div>
 
-
       <div class="service">
-
-        <div class="service-number">02</div>
+        <div class="service-no">02</div>
 
         <h3>Performance Analytics</h3>
 
         <p>
-          Player, team and league statistical analysis designed to put
-          production into context, identify trends and support traditional
-          scouting observations.
+          Player, team and league analysis designed to contextualize
+          production, identify trends and support scouting observations
+          with repeatable evidence.
         </p>
-
       </div>
 
-
       <div class="service">
-
-        <div class="service-number">03</div>
+        <div class="service-no">03</div>
 
         <h3>Development Pathways</h3>
 
         <p>
-          Historical player movement, league strength and advancement research
-          used to understand where players have come from and what competitive
-          environments may represent realistic next steps.
+          Historical player movement and advancement research used to
+          understand where players have come from, which environments
+          develop talent and what next steps may be realistic.
         </p>
-
       </div>
 
-
       <div class="service">
+        <div class="service-no">04</div>
 
-        <div class="service-number">04</div>
-
-        <h3>League Intelligence</h3>
+        <h3>Organizational Intelligence</h3>
 
         <p>
-          Structured analysis of leagues, teams, competition levels and player
-          outcomes to create a broader understanding of the hockey development
-          landscape.
+          League comparison, recruiting intelligence, alumni outcomes and
+          development benchmarking designed to support broader hockey decisions.
         </p>
-
       </div>
 
     </div>
 
   </section>
 
-
-  <!-- STATEMENT -->
+  <!-- =========================
+       BRAND STATEMENT
+  ========================= -->
 
   <section class="statement">
 
-    <div class="statement-inner">
-
+    <div class="wrap">
       <h2>
         Traditional hockey evaluation
         <span>meets structured intelligence.</span>
       </h2>
-
     </div>
 
   </section>
 
+  <!-- =========================
+       PROCESS
+  ========================= -->
 
-  <!-- PROCESS -->
+  <section>
 
-  <section class="process">
+    <div class="wrap">
 
-    <div class="content">
+      <div class="label">Our Process</div>
 
-      <div class="small-heading">
-        Our Process
-      </div>
-
-      <h2 class="process-title">
+      <h2 class="title">
         From observation to projection.
       </h2>
-
 
       <div class="process-grid">
 
         <div class="process-item">
           <div class="process-no">01</div>
+
           <h3>Identify</h3>
+
           <p>
-            Establish league, team and player coverage across targeted hockey
-            environments.
+            Establish league, team and player coverage across targeted
+            hockey environments.
           </p>
         </div>
 
         <div class="process-item">
           <div class="process-no">02</div>
+
           <h3>Evaluate</h3>
+
           <p>
-            Observe and grade players through standardized live and video
-            scouting.
+            Observe and grade players using standardized live and video
+            scouting criteria.
           </p>
         </div>
 
         <div class="process-item">
           <div class="process-no">03</div>
+
           <h3>Contextualize</h3>
+
           <p>
-            Compare performance with age, competition level, league environment
-            and historical player outcomes.
+            Compare performance with age, competition level, league
+            environment and historical player outcomes.
           </p>
         </div>
 
         <div class="process-item">
           <div class="process-no">04</div>
+
           <h3>Project</h3>
+
           <p>
             Combine scouting and analytical evidence to assess potential,
             development priorities and possible next levels.
@@ -957,62 +963,70 @@
 
   </section>
 
-
-  <!-- INTELLIGENCE -->
+  <!-- =========================
+       HOCKEY INTELLIGENCE
+  ========================= -->
 
   <section class="intelligence" id="intelligence">
 
-    <div class="content">
+    <div class="wrap">
 
-      <div class="intelligence-grid">
+      <div class="label">Hockey Intelligence</div>
 
-        <div>
+      <h2 class="title">
+        One model. Multiple layers of context.
+      </h2>
 
-          <div class="small-heading">
-            Hockey Intelligence
-          </div>
+      <p class="lead">
+        CADIG is developing a standardized hockey intelligence model that
+        compares players, leagues, development pathways and career outcomes
+        across different hockey systems.
+      </p>
 
-          <h2>
-            Beyond the scoresheet.
-          </h2>
+      <div class="intel-grid">
 
+        <div class="intel-card">
+          <div class="num">01</div>
+
+          <h3>Career Outcome</h3>
+
+          <p>
+            Track the highest competitive level reached across a player's
+            complete career history.
+          </p>
         </div>
 
+        <div class="intel-card">
+          <div class="num">02</div>
 
-        <div class="intel-list">
+          <h3>Development Pathway</h3>
 
-          <div class="intel-row">
-            <strong>League Context</strong>
-            <span>
-              Understanding the strength, structure and developmental role
-              of a player's competition.
-            </span>
-          </div>
+          <p>
+            Evaluate the strength of a league or environment as a route
+            toward future advancement.
+          </p>
+        </div>
 
-          <div class="intel-row">
-            <strong>Player Movement</strong>
-            <span>
-              Tracking where players come from, where they advance and how
-              development pathways evolve.
-            </span>
-          </div>
+        <div class="intel-card">
+          <div class="num">03</div>
 
-          <div class="intel-row">
-            <strong>Historical Outcomes</strong>
-            <span>
-              Comparing players and organizations using advancement history
-              rather than isolated production.
-            </span>
-          </div>
+          <h3>Advancement</h3>
 
-          <div class="intel-row">
-            <strong>Scout + Data Integration</strong>
-            <span>
-              Combining observation and quantitative evidence into a more
-              complete projection.
-            </span>
-          </div>
+          <p>
+            Measure upward, lateral and downward player movement across
+            competitive levels.
+          </p>
+        </div>
 
+        <div class="intel-card">
+          <div class="num">04</div>
+
+          <h3>Cross-League Context</h3>
+
+          <p>
+            Standardize league identities and competition levels so players
+            can be compared across systems.
+          </p>
         </div>
 
       </div>
@@ -1021,25 +1035,169 @@
 
   </section>
 
+  <!-- =========================
+       FRAMEWORK
+  ========================= -->
 
-  <!-- COVERAGE -->
+  <section id="framework">
 
-  <section class="coverage" id="coverage">
+    <div class="wrap framework-grid">
 
-    <div class="content">
+      <div>
 
-      <div class="small-heading">
-        Coverage
+        <div class="label">CADIG Framework</div>
+
+        <h2 class="title">
+          From data collection to hockey decisions.
+        </h2>
+
+        <p class="lead">
+          The model is designed to support scouting reports, recruiting
+          intelligence, organizational benchmarking and cross-league analysis.
+        </p>
+
       </div>
 
-      <h2>
-        Building our scouting network.
+      <div class="framework-list">
+
+        <div class="framework-row">
+          <strong>Scouting Reports</strong>
+
+          <span>
+            Current league context, comparable level, projected destination,
+            advancement projection and scout grades.
+          </span>
+        </div>
+
+        <div class="framework-row">
+          <strong>Recruiting Intelligence</strong>
+
+          <span>
+            Feeder leagues, regions, age groups and player profiles associated
+            with stronger outcomes.
+          </span>
+        </div>
+
+        <div class="framework-row">
+          <strong>Organizational Benchmarking</strong>
+
+          <span>
+            Compare alumni outcomes, development value and roster-source
+            effectiveness.
+          </span>
+        </div>
+
+        <div class="framework-row">
+          <strong>League Intelligence</strong>
+
+          <span>
+            Standardized league identities, competition tiers, pathway scores
+            and historical player movement.
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       RESEARCH
+  ========================= -->
+
+  <section class="research" id="research">
+
+    <div class="wrap">
+
+      <div class="label">CADIG Research</div>
+
+      <h2 class="title">
+        Methodology built into the work.
+      </h2>
+
+      <p class="lead">
+        Selected examples of CADIG's scouting and hockey-intelligence research.
+        Internal and confidential reports are not published in full.
+      </p>
+
+      <div class="report-grid">
+
+        <article class="report-card">
+
+          <div class="report-art">
+            <img src="cadig-logo.png" alt="CADIG logo" />
+          </div>
+
+          <div class="report-copy">
+
+            <div class="report-type">
+              League Intelligence
+            </div>
+
+            <h3>
+              Career Outcomes & Global Hockey League Intelligence Framework
+            </h3>
+
+            <p>
+              A standardized model for player advancement, league classification,
+              scouting context and organizational development analysis.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="report-card">
+
+          <div class="report-art">
+            <img src="cadig-logo.png" alt="CADIG logo" />
+          </div>
+
+          <div class="report-copy">
+
+            <div class="report-type">
+              Player Intelligence
+            </div>
+
+            <h3>
+              Prospect Evaluation & Scouting Reports
+            </h3>
+
+            <p>
+              Structured player reports combining verified statistics,
+              original scouting evaluation, development priorities and projection.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       COVERAGE
+  ========================= -->
+
+  <section id="coverage">
+
+    <div class="wrap">
+
+      <div class="label">Coverage</div>
+
+      <h2 class="title">
+        Building a regional scouting network with broader intelligence reach.
       </h2>
 
       <div class="coverage-grid">
 
         <div class="coverage-card">
           <h3>New York</h3>
+
           <p>
             Long Island<br>
             New York City<br>
@@ -1049,6 +1207,7 @@
 
         <div class="coverage-card">
           <h3>New Jersey</h3>
+
           <p>
             North Jersey<br>
             Central Jersey<br>
@@ -1058,11 +1217,12 @@
 
         <div class="coverage-card">
           <h3>Development Systems</h3>
+
           <p>
             Junior hockey<br>
             U18 / U16<br>
             College pathways<br>
-            North American and European research
+            North American & European league research
           </p>
         </div>
 
@@ -1072,137 +1232,24 @@
 
   </section>
 
-
-  <!-- RESEARCH -->
-
-  <section class="research" id="research">
-
-    <div class="content">
-
-      <div class="research-top">
-
-        <div>
-
-          <div class="small-heading">
-            CADIG Research
-          </div>
-
-          <h2>
-            Our work.
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="report-grid">
-
-        <article class="report">
-
-          <div class="report-image"></div>
-
-          <div class="report-copy">
-
-            <div class="report-type">
-              Prospect Intelligence
-            </div>
-
-            <h3>
-              Premium Prospect Guide
-            </h3>
-
-            <p>
-              Structured prospect evaluations combining statistical profiles,
-              scouting analysis, category grading and long-term projection.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="report">
-
-          <div class="report-image"></div>
-
-          <div class="report-copy">
-
-            <div class="report-type">
-              League Intelligence
-            </div>
-
-            <h3>
-              Career Outcomes & Development Pathways
-            </h3>
-
-            <p>
-              Historical analysis of player advancement, league classification,
-              competition strength and development outcomes.
-            </p>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- NUMBERS -->
-
-  <section class="numbers">
-
-    <div class="content">
-
-      <div class="small-heading" style="color:white;">
-        CADIG Framework
-      </div>
-
-      <h2>
-        Structured. Repeatable. Expandable.
-      </h2>
-
-      <div class="numbers-grid">
-
-        <div class="number-card">
-          <strong>01</strong>
-          <span>Standardized scouting methodology</span>
-        </div>
-
-        <div class="number-card">
-          <strong>02</strong>
-          <span>Scouting + analytical evidence</span>
-        </div>
-
-        <div class="number-card">
-          <strong>03</strong>
-          <span>Player, team and league intelligence</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- TEAM -->
+  <!-- =========================
+       TEAM
+  ========================= -->
 
   <section class="team" id="team">
 
-    <div class="content">
+    <div class="wrap">
 
-      <div class="small-heading">
-        Our Team
-      </div>
+      <div class="label">Our Team</div>
 
-      <h2>
+      <h2 class="title">
         Built around the game.
       </h2>
+
+      <p class="lead">
+        CADIG combines scouting observation, hockey research and analytical
+        work across a developing independent scouting network.
+      </p>
 
       <div class="team-grid">
 
@@ -1215,13 +1262,12 @@
           </div>
 
           <p>
-            Focused on hockey scouting, analytics, league intelligence,
-            player development research and building CADIG's broader
-            evaluation framework.
+            Focused on scouting methodology, player and league intelligence,
+            development pathways, analytics and building CADIG's broader
+            hockey intelligence framework.
           </p>
 
         </div>
-
 
         <div class="team-card">
 
@@ -1233,11 +1279,10 @@
 
           <p>
             Independent scouts contributing live and video observations
-            through a standardized player-evaluation process.
+            through a standardized evaluation process.
           </p>
 
         </div>
-
 
         <div class="team-card">
 
@@ -1248,8 +1293,8 @@
           </div>
 
           <p>
-            Statistical research, development pathway analysis and league
-            intelligence supporting CADIG's scouting evaluations.
+            Statistical research, league classification, development-pathway
+            analysis and career-outcome intelligence supporting scouting work.
           </p>
 
         </div>
@@ -1260,24 +1305,25 @@
 
   </section>
 
-
-  <!-- CONTACT -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
   <section class="contact" id="contact">
 
-    <div class="contact-inner">
+    <div class="wrap">
 
-      <div class="kicker">
+      <div class="label" style="color:#77c5f3">
         Connect With CADIG
       </div>
 
-      <h2>
+      <h2 class="title">
         LET'S TALK HOCKEY.
       </h2>
 
-      <p>
-        CADIG welcomes conversations with coaches, hockey directors, scouts,
-        teams, leagues, development programs, tournaments and others across
+      <p class="lead">
+        CADIG welcomes conversations with coaches, hockey directors, teams,
+        leagues, scouts, development programs, showcases and others across
         the hockey community.
       </p>
 
@@ -1289,25 +1335,25 @@
 
   </section>
 
-
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
-    <div class="footer-inner">
+    <div class="wrap footer-inner">
 
-      <div class="footer-brand">
-        CADIG SCOUTING AGENCY
+      <div>
+        © 2026 CADIG Scouting Agency
       </div>
 
-      <div class="footer-small">
-        © 2026 CADIG Scouting Agency
+      <div>
+        Hockey Scouting • Analytics • Player Intelligence
       </div>
 
     </div>
 
   </footer>
-
 
 </body>
 </html>
