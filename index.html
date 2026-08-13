@@ -1,1 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>CADIG Scouting Agency | Hockey Scouting & Analytics</title>
+
+  <meta name="description" content="CADIG Scouting Agency combines hockey scouting, analytics and player intelligence to evaluate talent, understand development pathways and support better hockey decisions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07111f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 15, 28, 0.96);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: #2e9cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #d8e3ef;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #2e9cff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 40%, rgba(29,126,214,0.22), transparent 35%),
+        linear-gradient(135deg, #07111f 0%, #0b1f36 55%, #07111f 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .eyebrow {
+      color: #45aaff;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.98;
+      max-width: 900px;
+      letter-spacing: -3px;
+      margin-bottom: 26px;
+    }
+
+    .hero h1 span {
+      color: #299cff;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      color: #b9c8d8;
+      font-size: 20px;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .button-primary {
+      background: #168fe5;
+      color: white;
+    }
+
+    .button-secondary {
+      border: 1px solid #52708d;
+      color: white;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 100px 30px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #299cff;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: #aebed0;
+      max-width: 720px;
+      font-size: 18px;
+      margin-bottom: 50px;
+    }
+
+    /* THREE PILLARS */
+
+    .services {
+      background: #0a1728;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #0d2036;
+      border: 1px solid #193854;
+      padding: 34px;
+      min-height: 280px;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #299cff;
+    }
+
+    .card-number {
+      color: #299cff;
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: #aebed0;
+    }
+
+    /* APPROACH */
+
+    .approach {
+      background: #07111f;
+    }
+
+    .process {
+      margin-top: 45px;
+      border-top: 1px solid #24405a;
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: 90px 1fr 2fr;
+      gap: 30px;
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 1px solid #24405a;
+    }
+
+    .process-number {
+      color: #299cff;
+      font-weight: 800;
+    }
+
+    .process-row h3 {
+      font-size: 20px;
+    }
+
+    .process-row p {
+      color: #aebed0;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #0a1728;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: #b7c5d4;
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .stat-box {
+      border-left: 3px solid #299cff;
+      padding-left: 25px;
+      margin-bottom: 30px;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .stat-box span {
+      color: #9eafc1;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(29,126,214,0.20), transparent 45%),
+        #07111f;
+    }
+
+    .contact .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #1c3349;
+      padding: 30px;
+      color: #8194a8;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .process-row {
+        grid-template-columns: 50px 1fr;
+      }
+
+      .process-row p {
+        grid-column: 2;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="nav-container">
+      <div class="brand">CADIG <span>SCOUTING</span></div>
+
+      <div class="nav-links">
+        <a href="#scouting">Scouting</a>
+        <a href="#approach">Our Approach</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">CADIG Scouting Agency</div>
+
+      <h1>
+        SEE THE PLAYER.<br>
+        <span>UNDERSTAND THE PATH.</span>
+      </h1>
+
+      <p class="hero-description">
+        Hockey scouting, analytics and player intelligence built to evaluate talent,
+        understand development pathways and provide deeper context around the game.
+      </p>
+
+      <div class="buttons">
+        <a href="#scouting" class="button button-primary">Explore Our Approach</a>
+        <a href="#contact" class="button button-secondary">Connect With CADIG</a>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- SERVICES -->
+
+  <section class="services" id="scouting">
+    <div class="container">
+
+      <div class="section-label">What We Do</div>
+
+      <h2 class="section-title">
+        Scouting informed by more than the scoresheet.
+      </h2>
+
+      <p class="section-intro">
+        CADIG brings traditional hockey evaluation together with statistical
+        analysis and development-pathway intelligence.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-number">01</div>
+          <h3>Hockey Scouting</h3>
+          <p>
+            Structured live and video evaluation focused on skating, hockey
+            intelligence, puck skills, offensive impact, defensive play,
+            competitiveness and long-term projection.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">02</div>
+          <h3>Analytics</h3>
+          <p>
+            Player, team and league analysis designed to put production into
+            context and identify trends that traditional box-score evaluation
+            can miss.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">03</div>
+          <h3>Player Intelligence</h3>
+          <p>
+            Development pathways, league context, historical advancement and
+            scouting observations combined to create a more complete view of
+            a player's trajectory.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- APPROACH -->
+
+  <section class="approach" id="approach">
+    <div class="container">
+
+      <div class="section-label">The CADIG Approach</div>
+
+      <h2 class="section-title">
+        From observation to intelligence.
+      </h2>
+
+      <p class="section-intro">
+        Our process separates what a player has produced, what our scouts
+        observe and what the player's competitive environment tells us about
+        future development.
+      </p>
+
+      <div class="process">
+
+        <div class="process-row">
+          <div class="process-number">01</div>
+          <h3>Identify</h3>
+          <p>Build league, team and player coverage across targeted hockey markets.</p>
+        </div>
+
+        <div class="process-row">
+          <div class="process-number">02</div>
+          <h3>Evaluate</h3>
+          <p>Scout players using a standardized evaluation framework across key hockey attributes.</p>
+        </div>
+
+        <div class="process-row">
+          <div class="process-number">03</div>
+          <h3>Contextualize</h3>
+          <p>Analyze production, competition level, age, development environment and historical pathways.</p>
+        </div>
+
+        <div class="process-row">
+          <div class="process-number">04</div>
+          <h3>Project</h3>
+          <p>Combine scouting and analytical evidence to assess potential, development priorities and possible next levels.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div>
+          <div class="section-label">About CADIG</div>
+          <h2 class="section-title">
+            Building a deeper hockey intelligence network.
+          </h2>
+        </div>
+
+        <div class="about-copy">
+
+          <p>
+            CADIG Scouting Agency is an independent hockey scouting and
+            analytics organization focused on player evaluation, development
+            pathways and league intelligence.
+          </p>
+
+          <p>
+            Our objective is to combine the judgment of traditional scouting
+            with structured data and repeatable analytical methods—creating
+            evaluations that consider both what happens on the ice and the
+            environment in which it happens.
+          </p>
+
+          <div class="stat-box">
+            <strong>SCOUTING + DATA</strong>
+            <span>Independent observation supported by analytical context.</span>
+          </div>
+
+          <div class="stat-box">
+            <strong>PLAYER DEVELOPMENT</strong>
+            <span>Understanding where players are today and where their game may translate next.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+    <div class="container">
+
+      <div class="section-label">Connect</div>
+
+      <h2 class="section-title">
+        Let's talk hockey.
+      </h2>
+
+      <p class="section-intro">
+        CADIG is building relationships with hockey organizations, coaches,
+        leagues, scouts and development programs.
+      </p>
+
+      <a href="#" class="button button-primary">Contact CADIG</a>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 CADIG Scouting Agency</div>
+      <div>Hockey Scouting • Analytics • Player Intelligence</div>
+    </div>
+  </footer>
+
+</body>
+</html>
