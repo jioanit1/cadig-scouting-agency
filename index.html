@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>CADIG Scouting Agency | Hockey Scouting & Intelligence</title>
 
-<meta name="description" content="CADIG Scouting Agency combines hockey scouting, analytics, player intelligence, development pathway research and league intelligence.">
+<meta
+    name="description"
+    content="CADIG Scouting Agency combines hockey scouting, analytics, player intelligence, development pathways and league intelligence."
+>
 
 <style>
+
+/* =========================================================
+   CADIG COLORS
+========================================================= */
+
 :root{
     --navy:#123b62;
     --navy-dark:#071c30;
@@ -20,7 +30,12 @@
     --text:#102437;
     --gray:#657483;
     --line:#d7e0e7;
+    --menu:#22272d;
 }
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -34,9 +49,14 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#fff;
+    background:#ffffff;
     color:var(--text);
+    line-height:1.55;
     overflow-x:hidden;
+}
+
+body.menu-open{
+    overflow:hidden;
 }
 
 a{
@@ -45,88 +65,157 @@ a{
 }
 
 /* =========================================================
+   EMBEDDED CADIG EMBLEM
+
+   IMPORTANT:
+   The actual emblem is embedded here.
+   There are NO external image files required.
+========================================================= */
+
+.emblem{
+    width:90px;
+    height:80px;
+
+    background-image:url("data:image/webp;base64,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");
+
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    flex-shrink:0;
+}
+
+.emblem-small{
+    width:78px;
+    height:70px;
+}
+
+.emblem-large{
+    width:230px;
+    height:200px;
+}
+
+.emblem-menu{
+    width:80px;
+    height:70px;
+}
+
+/* =========================================================
+   GENERAL LAYOUT
+========================================================= */
+
+.container{
+    width:min(1400px,calc(100% - 70px));
+    margin:auto;
+}
+
+section{
+    padding:110px 0;
+}
+
+.section-label{
+    color:var(--blue);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.section-title{
+    color:var(--navy-dark);
+    font-size:clamp(44px,6vw,78px);
+    line-height:1;
+    letter-spacing:-3px;
+    max-width:1100px;
+}
+
+.section-copy{
+    color:var(--gray);
+    font-size:20px;
+    line-height:1.75;
+    max-width:900px;
+    margin-top:28px;
+}
+
+/* =========================================================
    HEADER
 ========================================================= */
 
-header{
-    width:100%;
+.site-header{
+    height:110px;
     background:#fff;
-    border-bottom:1px solid #d7e0e7;
+    border-bottom:1px solid var(--line);
+
     position:sticky;
     top:0;
-    z-index:1000;
+    z-index:2000;
 }
 
 .header-inner{
-    max-width:1500px;
+    width:min(1500px,calc(100% - 70px));
+    height:100%;
     margin:auto;
-    min-height:115px;
-    padding:20px 38px;
+
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 }
 
 .brand{
     display:flex;
     align-items:center;
-    gap:20px;
-}
-
-.logo{
-    width:95px;
-    height:auto;
-    display:block;
+    gap:16px;
 }
 
 .brand-text strong{
     display:block;
-    color:#123b62;
-    font-size:22px;
-    letter-spacing:4px;
-    font-weight:800;
+
+    color:var(--navy);
+
+    font-size:19px;
+    letter-spacing:3px;
+    font-weight:900;
 }
 
 .brand-text span{
     display:block;
-    margin-top:8px;
-    color:#1486d4;
-    font-size:17px;
-    letter-spacing:5px;
-    font-weight:700;
-}
 
-.desktop-nav{
-    display:flex;
-    align-items:center;
-    gap:32px;
-    font-size:14px;
-    letter-spacing:1.5px;
-    font-weight:700;
-    text-transform:uppercase;
-}
+    color:var(--blue);
 
-.desktop-nav a:hover{
-    color:#1486d4;
+    font-size:13px;
+    letter-spacing:4px;
+
+    margin-top:7px;
+
+    font-weight:800;
 }
 
 .menu-button{
+    width:52px;
+    height:52px;
+
     border:0;
     background:transparent;
-    width:44px;
-    height:44px;
+
     cursor:pointer;
+
     display:flex;
     flex-direction:column;
+
     justify-content:center;
+    align-items:center;
+
     gap:7px;
 }
 
 .menu-button span{
-    width:32px;
-    height:2px;
-    background:#123b62;
     display:block;
+
+    width:31px;
+    height:2px;
+
+    background:var(--navy-dark);
 }
 
 /* =========================================================
@@ -135,11 +224,16 @@ header{
 
 .menu-overlay{
     position:fixed;
+
     inset:0;
-    background:#22272d;
+
+    background:var(--menu);
+
     z-index:5000;
+
     opacity:0;
     visibility:hidden;
+
     transition:.3s ease;
 }
 
@@ -148,25 +242,75 @@ header{
     visibility:visible;
 }
 
+.menu-inner{
+    width:min(1450px,calc(100% - 90px));
+    height:100%;
+
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.menu-top{
+    min-height:120px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.menu-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    color:#fff;
+}
+
+.menu-brand strong{
+    display:block;
+
+    font-size:21px;
+    letter-spacing:3px;
+}
+
+.menu-brand span{
+    display:block;
+
+    margin-top:6px;
+
+    font-size:12px;
+    letter-spacing:4px;
+
+    color:var(--blue-light);
+}
+
 .menu-close{
-    position:absolute;
-    top:40px;
-    right:50px;
     width:55px;
     height:55px;
+
     border:0;
+
     background:transparent;
+
     cursor:pointer;
+
+    position:relative;
 }
 
 .menu-close:before,
 .menu-close:after{
     content:"";
+
     position:absolute;
-    top:26px;
+
     left:5px;
-    width:45px;
-    height:3px;
+    top:27px;
+
+    width:44px;
+    height:2px;
+
     background:#fff;
 }
 
@@ -178,55 +322,85 @@ header{
     transform:rotate(-45deg);
 }
 
-.menu-logo{
-    position:absolute;
-    top:35px;
-    left:55px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.menu-logo img{
-    width:80px;
-}
-
-.menu-logo strong{
-    color:#fff;
-    letter-spacing:3px;
-}
-
 .menu-content{
-    min-height:100vh;
-    max-width:1400px;
-    margin:auto;
+    flex:1;
+
     display:flex;
     align-items:center;
-    padding:120px 80px;
 }
 
-.menu-main{
-    font-size:56px;
-    line-height:1.35;
+.menu-links{
+    display:flex;
+    flex-direction:column;
+}
+
+.menu-links a{
+    color:#e3e6e8;
+
+    font-size:clamp(42px,5vw,72px);
+
+    line-height:1.1;
+
     font-weight:800;
-    color:#ddd;
+
+    letter-spacing:-2px;
+
+    transition:.2s;
 }
 
-.menu-main a{
-    display:block;
+.menu-links a:hover{
+    color:var(--blue-light);
+
+    transform:translateX(10px);
 }
 
-.menu-main a:hover{
-    color:#5fb9ef;
+.menu-small-links{
+    margin-top:55px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
 }
 
-.menu-small{
-    margin-top:60px;
-    color:#aaa;
-    font-size:17px;
-    line-height:2;
-    letter-spacing:2px;
+.menu-small-links a{
+    color:#aeb5ba;
+
+    font-size:18px;
+
     font-weight:700;
+
+    letter-spacing:1px;
+}
+
+.menu-small-links a:hover{
+    color:#fff;
+}
+
+.menu-bottom{
+    min-height:95px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    color:#8997a1;
+
+    font-size:13px;
+}
+
+.menu-bottom-right{
+    color:var(--blue-light);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-weight:800;
 }
 
 /* =========================================================
@@ -234,150 +408,184 @@ header{
 ========================================================= */
 
 .hero{
+    min-height:830px;
+
+    color:#fff;
+
     position:relative;
-    min-height:800px;
-    display:flex;
-    align-items:center;
+
     overflow:hidden;
-    color:white;
+
+    display:flex;
+
+    align-items:center;
+
     background:
-        radial-gradient(circle at 100% 55%,
-        rgba(75,153,207,.30) 0,
-        rgba(75,153,207,.12) 28%,
-        transparent 55%),
-        linear-gradient(110deg,#071c30,#123b62);
+        radial-gradient(
+            circle at 95% 50%,
+            rgba(70,160,220,.25),
+            transparent 48%
+        ),
+        linear-gradient(
+            115deg,
+            #071c30,
+            #103d61
+        );
 }
 
 .hero:before{
     content:"";
+
     position:absolute;
-    width:950px;
-    height:950px;
-    border:2px solid rgba(255,255,255,.13);
+
+    width:850px;
+    height:850px;
+
+    right:-310px;
+    top:40px;
+
     border-radius:50%;
-    right:-370px;
-    top:-30px;
+
+    border:2px solid rgba(255,255,255,.14);
 }
 
 .hero:after{
     content:"";
+
     position:absolute;
-    width:700px;
-    height:1100px;
-    border-left:130px solid rgba(255,255,255,.025);
-    transform:rotate(12deg);
-    right:160px;
-    top:-150px;
+
+    right:190px;
+
+    width:220px;
+    height:1200px;
+
+    top:-170px;
+
+    transform:rotate(10deg);
+
+    background:rgba(255,255,255,.025);
 }
 
-.hero-inner{
-    position:relative;
-    z-index:2;
-    width:100%;
-    max-width:1500px;
+.hero-grid{
+    width:min(1450px,calc(100% - 70px));
+
     margin:auto;
-    padding:100px 40px;
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1.3fr .7fr;
+
+    gap:70px;
+
+    align-items:center;
 }
 
-.eyebrow{
+.hero-eyebrow{
     color:#74c8f5;
-    font-size:17px;
-    font-weight:800;
-    letter-spacing:7px;
+
     text-transform:uppercase;
-    margin-bottom:35px;
+
+    font-size:13px;
+
+    letter-spacing:6px;
+
+    font-weight:900;
+
+    margin-bottom:32px;
 }
 
 .hero h1{
-    max-width:1100px;
-    font-size:100px;
-    line-height:.96;
-    letter-spacing:-4px;
-    text-transform:uppercase;
+    font-size:clamp(62px,8vw,112px);
+
+    line-height:.9;
+
+    letter-spacing:-5px;
+
     font-weight:900;
+
+    text-transform:uppercase;
 }
 
 .hero h1 span{
-    color:#50b4ed;
+    color:#51b3ec;
 }
 
 .hero-copy{
-    max-width:1050px;
-    margin-top:50px;
-    color:#d7e4ee;
-    font-size:25px;
+    margin-top:42px;
+
+    max-width:900px;
+
+    color:#d5e3ee;
+
+    font-size:22px;
+
     line-height:1.7;
 }
 
 .hero-buttons{
     display:flex;
+
+    gap:14px;
+
     flex-wrap:wrap;
-    gap:15px;
-    margin-top:45px;
+
+    margin-top:40px;
 }
 
 .btn{
     display:inline-block;
+
     padding:17px 27px;
+
     border:1px solid #fff;
-    text-transform:uppercase;
+
+    color:#fff;
+
+    font-size:12px;
+
     letter-spacing:2px;
-    font-size:13px;
-    font-weight:800;
+
+    text-transform:uppercase;
+
+    font-weight:900;
+
     transition:.2s;
 }
 
-.btn-primary{
+.btn-white{
     background:#fff;
-    color:#0b2e4c;
+
+    color:var(--navy-dark);
 }
 
-.btn-primary:hover{
-    background:#50b4ed;
-    border-color:#50b4ed;
+.btn:hover{
+    background:var(--blue-light);
+
+    border-color:var(--blue-light);
+
+    color:var(--navy-dark);
 }
 
-.btn-outline:hover{
+.hero-emblem-box{
+    width:100%;
+
+    min-height:390px;
+
     background:#fff;
-    color:#0b2e4c;
-}
 
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
+    display:flex;
 
-.section{
-    padding:105px 40px;
-}
+    align-items:center;
 
-.container{
-    max-width:1450px;
-    margin:auto;
-}
+    justify-content:center;
 
-.section-label{
-    color:#1486d4;
-    text-transform:uppercase;
-    letter-spacing:5px;
-    font-weight:800;
-    font-size:14px;
-    margin-bottom:20px;
-}
+    padding:35px;
 
-.section h2{
-    color:#0b2e4c;
-    font-size:55px;
-    line-height:1.05;
-    max-width:1000px;
-    letter-spacing:-2px;
-}
-
-.section-intro{
-    max-width:950px;
-    margin-top:30px;
-    font-size:21px;
-    line-height:1.7;
-    color:#657483;
+    box-shadow:0 20px 50px rgba(0,0,0,.18);
 }
 
 /* =========================================================
@@ -385,144 +593,287 @@ header{
 ========================================================= */
 
 .about-grid{
-    margin-top:65px;
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    border-top:1px solid var(--line);
+
+    grid-template-columns:.75fr 1.25fr;
+
+    gap:90px;
+
+    margin-top:55px;
 }
 
-.about-item{
-    padding:40px 35px 40px 0;
+.about-copy p{
+    font-size:19px;
+
+    line-height:1.8;
+
+    color:var(--gray);
+
+    margin-bottom:20px;
+}
+
+/* =========================================================
+   WHAT WE DO
+========================================================= */
+
+.services{
+    background:#f3f7fa;
+}
+
+.service-list{
+    margin-top:60px;
+
+    border-top:1px solid #cbd5dc;
+}
+
+.service-row{
+    display:grid;
+
+    grid-template-columns:80px .8fr 1.3fr;
+
+    gap:40px;
+
+    padding:42px 0;
+
+    border-bottom:1px solid #cbd5dc;
+}
+
+.service-number{
+    color:var(--blue);
+
+    font-size:13px;
+
+    font-weight:900;
+}
+
+.service-row h3{
+    color:var(--navy-dark);
+
+    font-size:28px;
+}
+
+.service-row p{
+    color:var(--gray);
+
+    line-height:1.75;
+
+    font-size:17px;
+}
+
+/* =========================================================
+   STATEMENT
+========================================================= */
+
+.statement{
+    background:var(--navy);
+
+    color:#fff;
+}
+
+.statement h2{
+    max-width:1200px;
+
+    font-size:clamp(50px,7vw,95px);
+
+    line-height:.97;
+
+    letter-spacing:-4px;
+}
+
+.statement h2 span{
+    color:var(--blue-light);
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-grid{
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    border-top:1px solid var(--line);
+
+    border-left:1px solid var(--line);
+}
+
+.process-card{
+    min-height:300px;
+
+    padding:35px;
+
+    border-right:1px solid var(--line);
+
     border-bottom:1px solid var(--line);
 }
 
-.about-item:not(:nth-child(3n)){
-    border-right:1px solid var(--line);
-    padding-right:35px;
-    margin-right:35px;
+.process-number{
+    color:var(--blue);
+
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:80px;
 }
 
-.about-number{
-    color:#1486d4;
-    font-size:14px;
-    letter-spacing:3px;
-    font-weight:800;
+.process-card h3{
+    color:var(--navy-dark);
+
+    font-size:24px;
+
+    margin-bottom:14px;
 }
 
-.about-item h3{
-    color:#123b62;
-    font-size:25px;
-    margin:18px 0 14px;
-}
+.process-card p{
+    color:var(--gray);
 
-.about-item p{
-    color:#657483;
     line-height:1.7;
 }
 
 /* =========================================================
-   SERVICES
+   HOCKEY INTELLIGENCE
 ========================================================= */
 
-.services{
-    background:#eef7fc;
+.intelligence{
+    background:var(--navy-dark);
+
+    color:#fff;
 }
 
-.services-grid{
-    margin-top:60px;
+.intelligence .section-title{
+    color:#fff;
+}
+
+.intelligence .section-copy{
+    color:#c4d4df;
+}
+
+.intelligence-grid{
+    margin-top:65px;
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:repeat(4,1fr);
+
     gap:1px;
-    background:#cad9e3;
+
+    background:rgba(255,255,255,.15);
 }
 
-.service{
-    background:#fff;
-    padding:55px;
-    min-height:330px;
+.intelligence-card{
+    background:#0b2e4c;
+
+    padding:40px;
+
+    min-height:300px;
 }
 
-.service-number{
-    color:#1486d4;
-    font-size:13px;
-    letter-spacing:3px;
-    font-weight:800;
+.intelligence-card-number{
+    color:var(--blue-light);
+
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:70px;
 }
 
-.service h3{
-    color:#123b62;
-    font-size:31px;
-    margin:22px 0;
+.intelligence-card h3{
+    font-size:23px;
+
+    margin-bottom:14px;
 }
 
-.service p{
-    color:#657483;
-    line-height:1.8;
-    font-size:17px;
+.intelligence-card p{
+    color:#b9cad6;
+
+    line-height:1.7;
 }
 
 /* =========================================================
    REPORTS
 ========================================================= */
 
-.reports{
-    background:#071c30;
-    color:white;
-}
-
-.reports h2{
-    color:white;
-}
-
-.reports .section-intro{
-    color:#c9d9e6;
+.research{
+    background:var(--ice);
 }
 
 .report-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
     margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
 }
 
 .report-card{
     background:#fff;
-    color:#102437;
-    min-height:440px;
-    padding:50px;
-    position:relative;
+
+    border:1px solid #d5e0e7;
+
+    overflow:hidden;
 }
 
-.report-tag{
-    color:#1486d4;
+.report-banner{
+    height:240px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--navy-dark),
+            var(--blue)
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.report-emblem{
+    width:140px;
+    height:125px;
+
+    background-color:#fff;
+
+    padding:15px;
+}
+
+.report-content{
+    padding:38px;
+}
+
+.report-type{
+    color:var(--blue);
+
     text-transform:uppercase;
-    letter-spacing:4px;
-    font-size:13px;
-    font-weight:800;
+
+    letter-spacing:3px;
+
+    font-size:11px;
+
+    font-weight:900;
 }
 
-.report-card h3{
-    margin-top:20px;
-    font-size:35px;
-    color:#123b62;
+.report-content h3{
+    color:var(--navy-dark);
+
+    font-size:30px;
+
+    margin:12px 0 18px;
 }
 
-.report-card p{
-    margin-top:22px;
-    color:#657483;
-    line-height:1.8;
-    font-size:17px;
-}
+.report-content p{
+    color:var(--gray);
 
-.report-list{
-    margin-top:25px;
-    list-style:none;
-}
-
-.report-list li{
-    border-top:1px solid #d7e0e7;
-    padding:12px 0;
-    color:#455767;
+    line-height:1.75;
 }
 
 /* =========================================================
@@ -530,145 +881,126 @@ header{
 ========================================================= */
 
 .coverage-grid{
+    margin-top:60px;
+
     display:grid;
+
     grid-template-columns:repeat(3,1fr);
-    margin-top:60px;
-    border-top:1px solid var(--line);
+
+    gap:1px;
+
+    background:#d7e0e7;
 }
 
-.region{
-    padding:45px 35px 45px 0;
-    border-bottom:1px solid var(--line);
+.coverage-card{
+    background:#fff;
+
+    padding:40px;
+
+    min-height:260px;
 }
 
-.region:not(:nth-child(3n)){
-    border-right:1px solid var(--line);
-    margin-right:35px;
-    padding-right:35px;
-}
+.coverage-card h3{
+    color:var(--navy);
 
-.region h3{
-    color:#123b62;
     font-size:27px;
-    margin-bottom:25px;
+
+    margin-bottom:20px;
 }
 
-.region p{
-    color:#657483;
-    line-height:1.8;
-    font-size:17px;
+.coverage-card p{
+    color:var(--gray);
+
+    line-height:1.85;
 }
 
 /* =========================================================
-   PROCESS
+   TEAM
 ========================================================= */
 
-.process{
-    background:#123b62;
-    color:#fff;
+.team{
+    background:#f5f7f8;
 }
 
-.process h2{
-    color:#fff;
-}
-
-.process .section-intro{
-    color:#d5e1ea;
-}
-
-.process-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
+.team-grid{
     margin-top:60px;
-    border-top:1px solid rgba(255,255,255,.25);
-}
 
-.process-step{
-    padding:40px 30px 40px 0;
-}
-
-.process-step:not(:last-child){
-    border-right:1px solid rgba(255,255,255,.2);
-    margin-right:30px;
-}
-
-.process-number{
-    color:#5fb9ef;
-    letter-spacing:3px;
-    font-size:13px;
-    font-weight:800;
-}
-
-.process-step h3{
-    margin:18px 0;
-    font-size:24px;
-}
-
-.process-step p{
-    color:#c9d9e6;
-    line-height:1.7;
-}
-
-/* =========================================================
-   INTELLIGENCE
-========================================================= */
-
-.intelligence-grid{
-    margin-top:60px;
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
 }
 
-.intelligence-block{
-    border-top:4px solid #1486d4;
-    padding-top:30px;
+.team-card{
+    background:#fff;
+
+    padding:35px;
+
+    min-height:280px;
+
+    border-top:4px solid var(--navy);
 }
 
-.intelligence-block h3{
-    color:#123b62;
-    font-size:30px;
-    margin-bottom:18px;
+.team-card h3{
+    color:var(--navy-dark);
+
+    font-size:27px;
 }
 
-.intelligence-block p{
-    color:#657483;
-    line-height:1.8;
+.team-role{
+    margin-top:8px;
+
+    color:var(--blue);
+
+    text-transform:uppercase;
+
+    letter-spacing:1.4px;
+
+    font-size:11px;
+
+    font-weight:900;
+}
+
+.team-card p{
+    color:var(--gray);
+
+    margin-top:24px;
+
+    line-height:1.75;
 }
 
 /* =========================================================
-   CTA
+   CONTACT
 ========================================================= */
 
-.cta{
-    background:#50b4ed;
-    padding:90px 40px;
-}
+.contact{
+    background:
+        linear-gradient(
+            110deg,
+            #061625,
+            #0d4168
+        );
 
-.cta-inner{
-    max-width:1450px;
-    margin:auto;
+    color:#fff;
+
+    min-height:550px;
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
-    gap:50px;
 }
 
-.cta h2{
-    color:#071c30;
-    font-size:48px;
-    max-width:850px;
+.contact .section-title{
+    color:#fff;
 }
 
-.cta .btn{
-    border-color:#071c30;
-    color:#071c30;
-    white-space:nowrap;
+.contact .section-copy{
+    color:#c9dbe7;
 }
 
-.cta .btn:hover{
-    background:#071c30;
-    color:white;
+.contact .btn{
+    margin-top:35px;
 }
 
 /* =========================================================
@@ -676,46 +1008,63 @@ header{
 ========================================================= */
 
 footer{
-    background:#071c30;
+    background:#061625;
+
     color:#fff;
-    padding:65px 40px;
+
+    padding:45px 0;
 }
 
 .footer-inner{
-    max-width:1450px;
+    width:min(1450px,calc(100% - 70px));
+
     margin:auto;
+
     display:flex;
+
+    align-items:center;
+
     justify-content:space-between;
-    gap:50px;
+
+    gap:40px;
 }
 
 .footer-brand{
     display:flex;
-    gap:18px;
-    align-items:center;
-}
 
-.footer-brand img{
-    width:80px;
+    align-items:center;
+
+    gap:15px;
 }
 
 .footer-brand strong{
     display:block;
-    letter-spacing:3px;
+
+    font-size:14px;
+
+    letter-spacing:2px;
 }
 
 .footer-brand span{
     display:block;
-    color:#5fb9ef;
-    margin-top:7px;
+
+    margin-top:5px;
+
+    color:var(--blue-light);
+
+    font-size:10px;
+
     letter-spacing:3px;
-    font-size:12px;
 }
 
 .footer-copy{
-    color:#8fa6b8;
-    line-height:1.8;
+    color:#8da5b7;
+
+    font-size:12px;
+
     text-align:right;
+
+    line-height:1.8;
 }
 
 /* =========================================================
@@ -724,101 +1073,122 @@ footer{
 
 @media(max-width:1000px){
 
-    .desktop-nav{
-        display:none;
+    .hero-grid{
+        grid-template-columns:1fr;
     }
 
-    .hero h1{
-        font-size:70px;
+    .hero-emblem-box{
+        max-width:500px;
     }
 
-    .about-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .intelligence-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
     .coverage-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .region,
-    .about-item{
-        border-right:0 !important;
-        margin-right:0 !important;
-    }
-
-    .services-grid,
-    .report-grid,
-    .intelligence-grid{
+    .team-grid{
         grid-template-columns:1fr;
     }
 
-    .process-grid{
-        grid-template-columns:1fr 1fr;
-    }
 }
 
-@media(max-width:650px){
+@media(max-width:750px){
 
-    .header-inner{
-        padding:15px 20px;
-        min-height:90px;
+    .container,
+    .header-inner,
+    .hero-grid,
+    .footer-inner{
+        width:calc(100% - 36px);
     }
 
-    .logo{
-        width:70px;
+    section{
+        padding:80px 0;
+    }
+
+    .site-header{
+        height:95px;
+    }
+
+    .emblem-small{
+        width:65px;
+        height:58px;
     }
 
     .brand-text strong{
-        font-size:15px;
+        font-size:13px;
         letter-spacing:2px;
     }
 
     .brand-text span{
-        font-size:11px;
-        letter-spacing:3px;
+        font-size:9px;
+        letter-spacing:2.5px;
     }
 
     .hero{
         min-height:auto;
-    }
 
-    .hero-inner{
-        padding:90px 25px;
+        padding:90px 0;
     }
 
     .hero h1{
-        font-size:48px;
-        letter-spacing:-2px;
+        letter-spacing:-3px;
     }
 
     .hero-copy{
-        font-size:19px;
+        font-size:18px;
     }
 
-    .eyebrow{
-        font-size:12px;
-        letter-spacing:4px;
+    .hero-emblem-box{
+        min-height:300px;
     }
 
-    .section{
-        padding:75px 25px;
+    .service-row{
+        grid-template-columns:45px 1fr;
     }
 
-    .section h2{
-        font-size:39px;
+    .service-row p{
+        grid-column:2;
     }
 
-    .about-grid,
-    .coverage-grid,
-    .process-grid{
+    .process-grid,
+    .intelligence-grid,
+    .report-grid,
+    .coverage-grid{
         grid-template-columns:1fr;
     }
 
-    .service,
-    .report-card{
-        padding:35px 25px;
+    .menu-inner{
+        width:calc(100% - 40px);
     }
 
-    .cta-inner,
+    .menu-links a{
+        font-size:40px;
+    }
+
+    .menu-bottom{
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        justify-content:center;
+
+        gap:10px;
+    }
+
     .footer-inner{
         flex-direction:column;
+
         align-items:flex-start;
     }
 
@@ -826,726 +1196,1213 @@ footer{
         text-align:left;
     }
 
-    .menu-content{
-        padding:120px 35px;
-    }
-
-    .menu-main{
-        font-size:38px;
-    }
 }
+
 </style>
+
 </head>
 
 <body>
 
-<!-- ======================================================
+<!-- =========================================================
      FULL SCREEN MENU
-======================================================= -->
+========================================================= -->
 
-<div class="menu-overlay" id="menu">
+<div
+    class="menu-overlay"
+    id="menuOverlay"
+>
 
-    <button class="menu-close" onclick="closeMenu()" aria-label="Close menu"></button>
+    <div class="menu-inner">
 
-    <div class="menu-logo">
-        <div>
-            <strong>CADIG SCOUTING AGENCY</strong>
-        </div>
-    </div>
+        <div class="menu-top">
 
-    <div class="menu-content">
-        <div>
+            <div class="menu-brand">
 
-            <div class="menu-main">
-                <a href="#about" onclick="closeMenu()">About</a>
-                <a href="#services" onclick="closeMenu()">Scouting</a>
-                <a href="#reports" onclick="closeMenu()">Intelligence</a>
-                <a href="#coverage" onclick="closeMenu()">Coverage</a>
-                <a href="#contact" onclick="closeMenu()">Contact</a>
+                <div class="emblem emblem-menu"></div>
+
+                <div>
+
+                    <strong>
+                        CADIG SCOUTING AGENCY
+                    </strong>
+
+                    <span>
+                        HOCKEY INTELLIGENCE
+                    </span>
+
+                </div>
+
             </div>
 
-            <div class="menu-small">
-                HOCKEY SCOUTING<br>
-                ANALYTICS<br>
-                PLAYER INTELLIGENCE<br>
-                DEVELOPMENT PATHWAYS
+            <button
+                class="menu-close"
+                id="closeMenu"
+                aria-label="Close menu"
+            ></button>
+
+        </div>
+
+        <div class="menu-content">
+
+            <div>
+
+                <div class="menu-links">
+
+                    <a
+                        href="#scouting"
+                        class="menu-link"
+                    >
+                        Scouting
+                    </a>
+
+                    <a
+                        href="#intelligence"
+                        class="menu-link"
+                    >
+                        Hockey Intelligence
+                    </a>
+
+                    <a
+                        href="#research"
+                        class="menu-link"
+                    >
+                        Research
+                    </a>
+
+                    <a
+                        href="#coverage"
+                        class="menu-link"
+                    >
+                        Coverage
+                    </a>
+
+                    <a
+                        href="#team"
+                        class="menu-link"
+                    >
+                        Our Team
+                    </a>
+
+                </div>
+
+                <div class="menu-small-links">
+
+                    <a
+                        href="#about"
+                        class="menu-link"
+                    >
+                        About CADIG
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="menu-link"
+                    >
+                        Contact
+                    </a>
+
+                </div>
+
             </div>
 
         </div>
+
+        <div class="menu-bottom">
+
+            <div>
+                © 2026 CADIG Scouting Agency
+            </div>
+
+            <div class="menu-bottom-right">
+                Hockey Scouting • Analytics • Player Intelligence
+            </div>
+
+        </div>
+
     </div>
+
 </div>
 
-<!-- ======================================================
+<!-- =========================================================
      HEADER
-======================================================= -->
+========================================================= -->
 
-<header>
+<header class="site-header">
 
     <div class="header-inner">
 
-        <a class="brand" href="#top">
+        <a
+            href="#top"
+            class="brand"
+        >
+
+            <div class="emblem emblem-small"></div>
 
             <div class="brand-text">
-                <strong>CADIG SCOUTING AGENCY</strong>
-                <span>HOCKEY INTELLIGENCE</span>
+
+                <strong>
+                    CADIG SCOUTING AGENCY
+                </strong>
+
+                <span>
+                    HOCKEY INTELLIGENCE
+                </span>
+
             </div>
 
         </a>
 
-        <nav class="desktop-nav">
-            <a href="#about">About</a>
-            <a href="#services">Scouting</a>
-            <a href="#reports">Reports</a>
-            <a href="#coverage">Coverage</a>
-            <a href="#contact">Contact</a>
+        <button
+            class="menu-button"
+            id="openMenu"
+            aria-label="Open menu"
+        >
 
-            <button class="menu-button" onclick="openMenu()" aria-label="Open menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+            <span></span>
+            <span></span>
+            <span></span>
 
-        <button class="menu-button" onclick="openMenu()" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
         </button>
 
     </div>
 
 </header>
 
-<!-- ======================================================
+<!-- =========================================================
      HERO
-======================================================= -->
+========================================================= -->
 
-<section class="hero" id="top">
+<section
+    class="hero"
+    id="top"
+>
 
-    <div class="hero-inner">
+    <div class="hero-grid">
 
-        <div class="eyebrow">
-            Hockey Scouting • Analytics • Player Intelligence
+        <div>
+
+            <div class="hero-eyebrow">
+                Hockey Scouting • Analytics • Player Intelligence
+            </div>
+
+            <h1>
+
+                Scouting.<br>
+
+                Intelligence.<br>
+
+                <span>
+                    Projection.
+                </span>
+
+            </h1>
+
+            <p class="hero-copy">
+
+                Independent hockey scouting and intelligence built
+                to evaluate players, understand development pathways,
+                compare competitive environments and provide deeper
+                context around the game.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#research"
+                    class="btn btn-white"
+                >
+                    View Our Work
+                </a>
+
+                <a
+                    href="#coverage"
+                    class="btn"
+                >
+                    Scouting Coverage
+                </a>
+
+            </div>
+
         </div>
 
-        <h1>
-            Scouting.<br>
-            Intelligence.<br>
-            <span>Projection.</span>
-        </h1>
+        <div class="hero-emblem-box">
 
-        <p class="hero-copy">
-            Independent hockey scouting and intelligence built to evaluate players,
-            understand development pathways, compare competitive environments and
-            provide deeper context around the game.
+            <div class="emblem emblem-large"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            About CADIG
+        </div>
+
+        <h2 class="section-title">
+            A deeper view of hockey talent.
+        </h2>
+
+        <div class="about-grid">
+
+            <div>
+
+                <p class="section-copy">
+
+                    CADIG Scouting Agency is an independent hockey
+                    scouting and intelligence organization focused on
+                    player evaluation, development pathways, league
+                    intelligence and career outcomes.
+
+                </p>
+
+            </div>
+
+            <div class="about-copy">
+
+                <p>
+
+                    Our approach combines traditional scouting,
+                    video assessment, statistical analysis and
+                    historical player-development research.
+
+                </p>
+
+                <p>
+
+                    The goal is to understand not only what a player
+                    has produced, but how the player plays, the
+                    competitive environment in which that production
+                    occurred and where that skill set may translate next.
+
+                </p>
+
+                <p>
+
+                    CADIG's broader intelligence work connects player
+                    evaluation to league context, advancement history
+                    and developmental pathways.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SCOUTING
+========================================================= -->
+
+<section
+    class="services"
+    id="scouting"
+>
+
+    <div class="container">
+
+        <div class="section-label">
+            What We Do
+        </div>
+
+        <h2 class="section-title">
+            Evaluation beyond the scoresheet.
+        </h2>
+
+        <p class="section-copy">
+
+            CADIG combines observation and structured evidence
+            across connected areas of hockey evaluation.
+
         </p>
 
-        <div class="hero-buttons">
+        <div class="service-list">
 
-            <a href="#reports" class="btn btn-primary">
-                View Our Work
-            </a>
+            <div class="service-row">
 
-            <a href="#coverage" class="btn btn-outline">
-                Scouting Coverage
-            </a>
+                <div class="service-number">
+                    01
+                </div>
 
-        </div>
+                <h3>
+                    Player Scouting
+                </h3>
 
-    </div>
+                <p>
 
-</section>
+                    Live and video evaluation focused on skating,
+                    hockey intelligence, puck skills, offensive impact,
+                    defensive reliability, competitiveness and projection.
 
-<!-- ======================================================
-     ABOUT
-======================================================= -->
+                </p>
 
-<section class="section" id="about">
-
-<div class="container">
-
-    <div class="section-label">CADIG Scouting Agency</div>
-
-    <h2>
-        Hockey evaluation built around context, not just numbers.
-    </h2>
-
-    <p class="section-intro">
-        CADIG Scouting Agency combines traditional player evaluation,
-        statistical analysis and league intelligence to build a more complete
-        understanding of players and the environments in which they develop.
-    </p>
-
-    <div class="about-grid">
-
-        <div class="about-item">
-            <div class="about-number">01</div>
-            <h3>Player Evaluation</h3>
-            <p>
-                Structured scouting focused on skating, hockey sense,
-                puck skills, compete level, positional habits,
-                decision-making and projectable tools.
-            </p>
-        </div>
-
-        <div class="about-item">
-            <div class="about-number">02</div>
-            <h3>Statistical Intelligence</h3>
-            <p>
-                Player and league statistics are organized to identify
-                production patterns, peer comparisons and developmental context.
-            </p>
-        </div>
-
-        <div class="about-item">
-            <div class="about-number">03</div>
-            <h3>Development Pathways</h3>
-            <p>
-                Research into junior, prep, high school, college and
-                international pathways provides context around where
-                players are developing.
-            </p>
-        </div>
-
-        <div class="about-item">
-            <div class="about-number">04</div>
-            <h3>League Intelligence</h3>
-            <p>
-                Competitive environments are evaluated across regions,
-                age groups and leagues to help place individual performance
-                into the proper context.
-            </p>
-        </div>
-
-        <div class="about-item">
-            <div class="about-number">05</div>
-            <h3>Projection</h3>
-            <p>
-                Evaluation extends beyond current production toward
-                identifying transferable skills, developmental upside
-                and future role potential.
-            </p>
-        </div>
-
-        <div class="about-item">
-            <div class="about-number">06</div>
-            <h3>Independent Research</h3>
-            <p>
-                CADIG develops original hockey research designed to support
-                scouting conversations, player comparisons and
-                organizational decision-making.
-            </p>
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-<!-- ======================================================
-     SERVICES
-======================================================= -->
-
-<section class="section services" id="services">
-
-<div class="container">
-
-    <div class="section-label">What We Do</div>
-
-    <h2>
-        Scouting and intelligence from the player level to the league level.
-    </h2>
-
-    <p class="section-intro">
-        Our work is structured around two core report types:
-        broad statistical intelligence and deeper individual scouting evaluation.
-    </p>
-
-    <div class="services-grid">
-
-        <div class="service">
-
-            <div class="service-number">REPORT 01</div>
-
-            <h3>League & Statistical Intelligence</h3>
-
-            <p>
-                Large-scale league reports organize player production,
-                age, position, team, league and developmental information
-                into a usable scouting reference.
-            </p>
-
-        </div>
-
-        <div class="service">
-
-            <div class="service-number">REPORT 02</div>
-
-            <h3>Individual Player Scouting</h3>
-
-            <p>
-                Focused player reports combine live or video-based observation
-                with statistical context, strengths, areas for development,
-                role assessment and projection.
-            </p>
-
-        </div>
-
-        <div class="service">
-
-            <div class="service-number">INTELLIGENCE</div>
-
-            <h3>Development Pathway Research</h3>
-
-            <p>
-                Mapping the progression of players through youth,
-                junior, prep, college and international hockey systems
-                to understand developmental environments and opportunities.
-            </p>
-
-        </div>
-
-        <div class="service">
-
-            <div class="service-number">ANALYTICS</div>
-
-            <h3>Comparative Player Analysis</h3>
-
-            <p>
-                Statistical and contextual comparisons help identify
-                players performing above their environment, comparable
-                development profiles and potential scouting targets.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-</section>
-
-<!-- ======================================================
-     REPORTS
-======================================================= -->
-
-<section class="section reports" id="reports">
-
-<div class="container">
-
-    <div class="section-label">Our Work</div>
-
-    <h2>
-        Evaluation & scouting reports.
-    </h2>
-
-    <p class="section-intro">
-        CADIG reports combine verified statistics, structured research
-        and original scouting evaluation.
-    </p>
-
-    <div class="report-grid">
-
-        <div class="report-card">
-
-            <div class="report-tag">
-                League Intelligence
             </div>
 
-            <h3>
-                Statistical Scouting Report
-            </h3>
+            <div class="service-row">
 
-            <p>
-                A broader intelligence report designed to organize a player
-                pool and identify individuals who warrant deeper scouting attention.
-            </p>
+                <div class="service-number">
+                    02
+                </div>
 
-            <ul class="report-list">
-                <li>Player production</li>
-                <li>Position</li>
-                <li>Age and development stage</li>
-                <li>Team and league context</li>
-                <li>Peer comparison</li>
-                <li>Target identification</li>
-            </ul>
+                <h3>
+                    Performance Analytics
+                </h3>
 
-        </div>
+                <p>
 
-        <div class="report-card">
+                    Player, team and league analysis designed to
+                    contextualize production, identify trends and
+                    support scouting observations with repeatable evidence.
 
-            <div class="report-tag">
-                Player Intelligence
+                </p>
+
             </div>
 
-            <h3>
-                Individual Scouting Report
-            </h3>
+            <div class="service-row">
 
-            <p>
-                A detailed evaluation designed to move beyond the stat line
-                and describe how a player actually impacts the game.
-            </p>
+                <div class="service-number">
+                    03
+                </div>
 
-            <ul class="report-list">
-                <li>Skating</li>
-                <li>Puck skills</li>
-                <li>Hockey sense</li>
-                <li>Compete level</li>
-                <li>Offensive and defensive habits</li>
-                <li>Projection and development priorities</li>
-            </ul>
+                <h3>
+                    Development Pathways
+                </h3>
+
+                <p>
+
+                    Historical player movement and advancement research
+                    used to understand where players have come from and
+                    which environments develop talent.
+
+                </p>
+
+            </div>
+
+            <div class="service-row">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <h3>
+                    League Intelligence
+                </h3>
+
+                <p>
+
+                    Cross-league comparison, player movement,
+                    development context and historical career outcomes.
+
+                </p>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
 </section>
 
-<!-- ======================================================
-     COVERAGE
-======================================================= -->
+<!-- =========================================================
+     STATEMENT
+========================================================= -->
 
-<section class="section" id="coverage">
+<section class="statement">
 
-<div class="container">
+    <div class="container">
 
-    <div class="section-label">Scouting Coverage</div>
+        <h2>
 
-    <h2>
-        Regional coverage with broader North American and international intelligence.
-    </h2>
+            Traditional hockey evaluation
 
-    <p class="section-intro">
-        CADIG's scouting network is designed to begin with accessible regional
-        markets while building intelligence across major hockey development systems.
-    </p>
+            <span>
+                meets structured intelligence.
+            </span>
 
-    <div class="coverage-grid">
-
-        <div class="region">
-            <h3>New York</h3>
-            <p>
-                Long Island<br>
-                New York City<br>
-                Westchester / Hudson Valley<br>
-                Junior, prep and high school hockey
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>New Jersey</h3>
-            <p>
-                North Jersey<br>
-                Central Jersey<br>
-                South Jersey<br>
-                Regional events and showcases
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>Ontario</h3>
-            <p>
-                Greater Toronto Area<br>
-                Ottawa Region<br>
-                Northern Ontario<br>
-                Junior and development systems
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>Alberta</h3>
-            <p>
-                Calgary Region<br>
-                Edmonton Region<br>
-                Central Alberta<br>
-                Junior and elite development pathways
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>British Columbia</h3>
-            <p>
-                Vancouver / Lower Mainland<br>
-                Vancouver Island<br>
-                Interior British Columbia<br>
-                Junior and development hockey
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>Prairie Provinces</h3>
-            <p>
-                Saskatchewan<br>
-                Manitoba<br>
-                Junior hockey systems<br>
-                Regional development leagues
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>Québec</h3>
-            <p>
-                Montréal Region<br>
-                Québec City Region<br>
-                Provincial development systems<br>
-                Junior hockey
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>Atlantic Canada</h3>
-            <p>
-                New Brunswick<br>
-                Nova Scotia<br>
-                Prince Edward Island<br>
-                Newfoundland and Labrador
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>United States — Northeast</h3>
-            <p>
-                New England<br>
-                Pennsylvania<br>
-                New York / New Jersey<br>
-                Prep, junior and college pathways
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>United States — Midwest</h3>
-            <p>
-                Minnesota<br>
-                Michigan<br>
-                Wisconsin<br>
-                Great Lakes development systems
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>Development Systems</h3>
-            <p>
-                Junior hockey<br>
-                U18 / U16<br>
-                Prep and high school<br>
-                College pathways
-            </p>
-        </div>
-
-        <div class="region">
-            <h3>International Intelligence</h3>
-            <p>
-                European junior systems<br>
-                International tournaments<br>
-                Player pathway research<br>
-                Cross-league comparison
-            </p>
-        </div>
+        </h2>
 
     </div>
 
-</div>
 </section>
 
-<!-- ======================================================
+<!-- =========================================================
      PROCESS
-======================================================= -->
+========================================================= -->
 
-<section class="section process">
+<section>
 
-<div class="container">
+    <div class="container">
 
-    <div class="section-label">Scouting Process</div>
-
-    <h2>
-        From identification to projection.
-    </h2>
-
-    <p class="section-intro">
-        A repeatable process helps move from a large player pool
-        toward focused individual evaluation.
-    </p>
-
-    <div class="process-grid">
-
-        <div class="process-step">
-            <div class="process-number">01</div>
-            <h3>Identify</h3>
-            <p>
-                Statistical research and league monitoring establish
-                the initial player pool.
-            </p>
+        <div class="section-label">
+            Our Process
         </div>
 
-        <div class="process-step">
-            <div class="process-number">02</div>
-            <h3>Observe</h3>
-            <p>
-                Players are evaluated through live viewing,
-                video and structured scouting criteria.
-            </p>
-        </div>
+        <h2 class="section-title">
+            From observation to projection.
+        </h2>
 
-        <div class="process-step">
-            <div class="process-number">03</div>
-            <h3>Contextualize</h3>
-            <p>
-                Performance is compared against age,
-                league quality, role and developmental environment.
-            </p>
-        </div>
+        <div class="process-grid">
 
-        <div class="process-step">
-            <div class="process-number">04</div>
-            <h3>Project</h3>
-            <p>
-                Current ability is translated into developmental
-                upside and potential future role.
-            </p>
+            <div class="process-card">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Identify
+                </h3>
+
+                <p>
+
+                    Establish league, team and player coverage
+                    across targeted hockey environments.
+
+                </p>
+
+            </div>
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Evaluate
+                </h3>
+
+                <p>
+
+                    Observe and grade players using standardized
+                    live and video scouting criteria.
+
+                </p>
+
+            </div>
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Contextualize
+                </h3>
+
+                <p>
+
+                    Compare performance with age, competition
+                    level, league environment and historical outcomes.
+
+                </p>
+
+            </div>
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Project
+                </h3>
+
+                <p>
+
+                    Combine scouting and analytical evidence
+                    to assess potential and possible next levels.
+
+                </p>
+
+            </div>
+
         </div>
 
     </div>
 
-</div>
 </section>
 
-<!-- ======================================================
+<!-- =========================================================
      INTELLIGENCE
-======================================================= -->
+========================================================= -->
 
-<section class="section">
+<section
+    class="intelligence"
+    id="intelligence"
+>
 
-<div class="container">
+    <div class="container">
 
-    <div class="section-label">Hockey Intelligence</div>
-
-    <h2>
-        More than a list of players.
-    </h2>
-
-    <p class="section-intro">
-        Player evaluation becomes more useful when it is connected
-        to the larger hockey environment.
-    </p>
-
-    <div class="intelligence-grid">
-
-        <div class="intelligence-block">
-
-            <h3>League Intelligence</h3>
-
-            <p>
-                Tracking league strength, age distributions,
-                development systems and competitive environments
-                creates context for evaluating individual production.
-            </p>
-
+        <div class="section-label">
+            Hockey Intelligence
         </div>
 
-        <div class="intelligence-block">
+        <h2 class="section-title">
+            One model. Multiple layers of context.
+        </h2>
 
-            <h3>Player Intelligence</h3>
+        <p class="section-copy">
 
-            <p>
-                Individual reports connect observable hockey traits
-                with statistical performance and developmental projection.
-            </p>
+            CADIG is developing a standardized hockey intelligence
+            approach for understanding players, leagues,
+            development pathways and career outcomes.
 
-        </div>
+        </p>
 
-        <div class="intelligence-block">
+        <div class="intelligence-grid">
 
-            <h3>Regional Intelligence</h3>
+            <div class="intelligence-card">
 
-            <p>
-                Building relationships with coaches, programs,
-                leagues and hockey communities helps identify players
-                and environments that may otherwise receive limited attention.
-            </p>
+                <div class="intelligence-card-number">
+                    01
+                </div>
 
-        </div>
+                <h3>
+                    Career Outcome
+                </h3>
 
-        <div class="intelligence-block">
+                <p>
 
-            <h3>International Intelligence</h3>
+                    Understand the highest competitive level
+                    reached across a player's career history.
 
-            <p>
-                Research across North American and European development
-                systems creates a broader understanding of player pathways
-                and competitive environments.
-            </p>
+                </p>
+
+            </div>
+
+            <div class="intelligence-card">
+
+                <div class="intelligence-card-number">
+                    02
+                </div>
+
+                <h3>
+                    Development Pathway
+                </h3>
+
+                <p>
+
+                    Evaluate the strength of a league or
+                    environment as a route toward advancement.
+
+                </p>
+
+            </div>
+
+            <div class="intelligence-card">
+
+                <div class="intelligence-card-number">
+                    03
+                </div>
+
+                <h3>
+                    Advancement
+                </h3>
+
+                <p>
+
+                    Track upward, lateral and downward player
+                    movement across competitive levels.
+
+                </p>
+
+            </div>
+
+            <div class="intelligence-card">
+
+                <div class="intelligence-card-number">
+                    04
+                </div>
+
+                <h3>
+                    Cross-League Context
+                </h3>
+
+                <p>
+
+                    Compare competitive environments and
+                    development systems across hockey markets.
+
+                </p>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
 </section>
 
-<!-- ======================================================
-     CONTACT CTA
-======================================================= -->
+<!-- =========================================================
+     RESEARCH
+========================================================= -->
 
-<section class="cta" id="contact">
+<section
+    class="research"
+    id="research"
+>
 
-<div class="cta-inner">
+    <div class="container">
 
-    <h2>
-        Scouting. Analytics. Player intelligence.
-        Built for deeper hockey evaluation.
-    </h2>
+        <div class="section-label">
+            CADIG Research
+        </div>
 
-    <a href="mailto:contact@cadigscouting.com" class="btn">
-        Contact CADIG
-    </a>
+        <h2 class="section-title">
+            Two layers of scouting intelligence.
+        </h2>
 
-</div>
+        <p class="section-copy">
+
+            CADIG separates broad league and statistical research
+            from focused individual player evaluation before
+            combining both into a final projection.
+
+        </p>
+
+        <div class="report-grid">
+
+            <article class="report-card">
+
+                <div class="report-banner">
+
+                    <div class="emblem report-emblem"></div>
+
+                </div>
+
+                <div class="report-content">
+
+                    <div class="report-type">
+                        League Intelligence
+                    </div>
+
+                    <h3>
+                        League & Statistical Intelligence Report
+                    </h3>
+
+                    <p>
+
+                        League strength, player production, age,
+                        team context, advancement outcomes and
+                        development pathways organized into a
+                        structured scouting reference.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="report-card">
+
+                <div class="report-banner">
+
+                    <div class="emblem report-emblem"></div>
+
+                </div>
+
+                <div class="report-content">
+
+                    <div class="report-type">
+                        Player Intelligence
+                    </div>
+
+                    <h3>
+                        Individual Player Scouting Report
+                    </h3>
+
+                    <p>
+
+                        Live or video-based evaluation covering
+                        skating, hockey IQ, puck skills,
+                        offensive and defensive impact, compete,
+                        development priorities and projection.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- ======================================================
+<!-- =========================================================
+     COVERAGE
+========================================================= -->
+
+<section id="coverage">
+
+    <div class="container">
+
+        <div class="section-label">
+            Coverage
+        </div>
+
+        <h2 class="section-title">
+            Regional scouting. Broader hockey intelligence.
+        </h2>
+
+        <p class="section-copy">
+
+            CADIG is building coverage across accessible scouting
+            markets while developing intelligence across major
+            North American and international hockey systems.
+
+        </p>
+
+        <div class="coverage-grid">
+
+            <div class="coverage-card">
+
+                <h3>
+                    New York
+                </h3>
+
+                <p>
+                    Long Island<br>
+                    New York City<br>
+                    Westchester / Hudson Valley<br>
+                    Upstate New York
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    New Jersey
+                </h3>
+
+                <p>
+                    North Jersey<br>
+                    Central Jersey<br>
+                    South Jersey<br>
+                    Regional showcases
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    Ontario
+                </h3>
+
+                <p>
+                    Greater Toronto Area<br>
+                    Ottawa Region<br>
+                    Northern Ontario<br>
+                    Junior development systems
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    Alberta
+                </h3>
+
+                <p>
+                    Calgary Region<br>
+                    Edmonton Region<br>
+                    Central Alberta<br>
+                    Junior pathways
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    British Columbia
+                </h3>
+
+                <p>
+                    Lower Mainland<br>
+                    Vancouver Island<br>
+                    Interior British Columbia<br>
+                    Junior hockey
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    Prairie Provinces
+                </h3>
+
+                <p>
+                    Saskatchewan<br>
+                    Manitoba<br>
+                    Junior systems<br>
+                    Regional development leagues
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    Québec
+                </h3>
+
+                <p>
+                    Montréal Region<br>
+                    Québec City Region<br>
+                    Provincial development systems<br>
+                    Junior hockey
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    Atlantic Canada
+                </h3>
+
+                <p>
+                    New Brunswick<br>
+                    Nova Scotia<br>
+                    Prince Edward Island<br>
+                    Newfoundland & Labrador
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    United States — Northeast
+                </h3>
+
+                <p>
+                    New England<br>
+                    Pennsylvania<br>
+                    NY / NJ<br>
+                    Prep, junior and college pathways
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    United States — Midwest
+                </h3>
+
+                <p>
+                    Minnesota<br>
+                    Michigan<br>
+                    Wisconsin<br>
+                    Great Lakes systems
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    Development Systems
+                </h3>
+
+                <p>
+                    Junior Hockey<br>
+                    U18 / U16<br>
+                    Prep & High School<br>
+                    College pathways
+                </p>
+
+            </div>
+
+            <div class="coverage-card">
+
+                <h3>
+                    International Intelligence
+                </h3>
+
+                <p>
+                    European junior systems<br>
+                    Professional leagues<br>
+                    Cross-league comparison<br>
+                    Player movement
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     TEAM
+========================================================= -->
+
+<section
+    class="team"
+    id="team"
+>
+
+    <div class="container">
+
+        <div class="section-label">
+            Our Team
+        </div>
+
+        <h2 class="section-title">
+            Built around the game.
+        </h2>
+
+        <p class="section-copy">
+
+            CADIG combines scouting observation, hockey research
+            and analytical work across a developing independent
+            scouting network.
+
+        </p>
+
+        <div class="team-grid">
+
+            <div class="team-card">
+
+                <h3>
+                    Justin Ioanitescu
+                </h3>
+
+                <div class="team-role">
+                    Founder • Scouting & Hockey Intelligence
+                </div>
+
+                <p>
+
+                    Focused on player and league intelligence,
+                    scouting methodology, analytics, development
+                    pathways and CADIG's broader hockey intelligence framework.
+
+                </p>
+
+            </div>
+
+            <div class="team-card">
+
+                <h3>
+                    CADIG Scouting Team
+                </h3>
+
+                <div class="team-role">
+                    Player Evaluation
+                </div>
+
+                <p>
+
+                    Independent scouts contributing live
+                    and video observations through a
+                    standardized evaluation process.
+
+                </p>
+
+            </div>
+
+            <div class="team-card">
+
+                <h3>
+                    Research & Analytics
+                </h3>
+
+                <div class="team-role">
+                    Hockey Intelligence
+                </div>
+
+                <p>
+
+                    Statistical research, league classification,
+                    development-pathway analysis and career-outcome
+                    intelligence supporting scouting work.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+    <div class="container">
+
+        <div class="section-label">
+            Connect With CADIG
+        </div>
+
+        <h2 class="section-title">
+            Let's talk hockey.
+        </h2>
+
+        <p class="section-copy">
+
+            CADIG welcomes conversations with coaches,
+            hockey directors, scouts, teams, leagues,
+            development programs, showcases and others
+            across the hockey community.
+
+        </p>
+
+        <a
+            href="mailto:YOUR-EMAIL-HERE"
+            class="btn"
+        >
+            Contact CADIG
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
      FOOTER
-======================================================= -->
+========================================================= -->
 
 <footer>
 
-<div class="footer-inner">
+    <div class="footer-inner">
 
-    <div class="footer-brand">
+        <div class="footer-brand">
 
-        <div>
-            <strong>CADIG SCOUTING AGENCY</strong>
-            <span>HOCKEY INTELLIGENCE</span>
+            <div class="emblem emblem-small"></div>
+
+            <div>
+
+                <strong>
+                    CADIG SCOUTING AGENCY
+                </strong>
+
+                <span>
+                    HOCKEY INTELLIGENCE
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="footer-copy">
+
+            © 2026 CADIG Scouting Agency<br>
+            Hockey Scouting • Analytics • Player Intelligence
+
         </div>
 
     </div>
 
-    <div class="footer-copy">
-        © 2026 CADIG Scouting Agency<br>
-        Hockey Scouting • Analytics • Player Intelligence
-    </div>
-
-</div>
-
 </footer>
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
-function openMenu(){
-    document.getElementById("menu").classList.add("active");
-    document.body.style.overflow="hidden";
+
+const openMenu =
+    document.getElementById("openMenu");
+
+const closeMenu =
+    document.getElementById("closeMenu");
+
+const menuOverlay =
+    document.getElementById("menuOverlay");
+
+const menuLinks =
+    document.querySelectorAll(".menu-link");
+
+
+function showMenu(){
+
+    menuOverlay.classList.add("active");
+
+    document.body.classList.add("menu-open");
+
 }
 
-function closeMenu(){
-    document.getElementById("menu").classList.remove("active");
-    document.body.style.overflow="";
+
+function hideMenu(){
+
+    menuOverlay.classList.remove("active");
+
+    document.body.classList.remove("menu-open");
+
 }
 
-document.addEventListener("keydown", function(event){
-    if(event.key === "Escape"){
-        closeMenu();
-    }
+
+openMenu.addEventListener(
+    "click",
+    showMenu
+);
+
+
+closeMenu.addEventListener(
+    "click",
+    hideMenu
+);
+
+
+menuLinks.forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        hideMenu
+    );
+
 });
+
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            hideMenu();
+
+        }
+
+    }
+);
+
 </script>
 
 </body>
+
 </html>
