@@ -1,46 +1,12 @@
-# CADIG Hockey — Advanced Multi-Page Rebuild
+# CADIG Hockey — Self-Contained GitHub Pages Build
 
-This version expands the original rebuild into a deeper hockey-intelligence platform.
+Every HTML page contains its own CSS and JavaScript.
 
-## Pages
-- Home
-- Scouting
-- Intelligence
-- Players
-- Player Profile
-- League Intelligence
-- Coverage
-- Research
-- Market Intelligence / NHL Agency Segmentation
-- Services
-- Team
-- About
-- Contact
+There are no dependencies on:
+- site.css
+- site.js
+- assets/
+- external frameworks
 
-## Advanced modules
-- Mega-navigation and mobile navigation
-- Intelligence-system hero dashboard
-- 13-point homepage architecture
-- Player intelligence profiles
-- Development pathway visualization
-- League intelligence hubs
-- Regional coverage framework
-- Team filtering
-- Proof/KPI framework
-- Searchable/filterable research architecture
-- NHL agency/agent segmentation
-- Market white-space matrix
-- Services architecture
-- Interactive tab panels
-- Responsive design
-
-## Publishing
-Upload the entire folder contents to the root of the GitHub Pages repository.
-
-
-## Work Product Additions
-- `work.html` — central case-study hub
-- `prospect-guide.html` — Serge / scouting group premium prospect guide showcase
-- `sijhl-intelligence.html` — Justin / SIJHL career-outcomes and league-intelligence showcase
-
-The case studies use selected information from the supplied internal working documents. The full confidential documents are not embedded or exposed.
+Upload the HTML files in this folder to the repository root and overwrite the existing HTML files.
+The existing site.css/site.js files may remain in the repository; they will simply be unused.
