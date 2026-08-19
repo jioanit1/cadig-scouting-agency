@@ -1,15 +1,33 @@
-# CADIG Hockey — Self-Contained GitHub Pages Build
+# CADIG Hockey — Master GitHub Build
 
-Every HTML page contains its own CSS and JavaScript.
+This is the consolidated website architecture.
 
-There are no dependencies on:
-- site.css
-- site.js
-- assets/
-- external frameworks
+## Primary navigation
+- Scouting
+- Intelligence
+- Our Work
+- Team
+- About
+- Contact
+- ☰ deeper menu: Player Intelligence, League Intelligence, Development Pathways, Market Intelligence, Coverage, Research, Prospect Guide, Services
 
-Upload the HTML files in this folder to the repository root and overwrite the existing HTML files.
-The existing site.css/site.js files may remain in the repository; they will simply be unused.
+## Team profiles
+- serge-gervais.html
+- justin-ioanitescu.html
+- nolan-ambrosino.html
+- michael-canfield.html
+- kevin-davison.html
 
+## Work / case studies
+- prospect-guide.html
+- sijhl-intelligence.html
+- agency-landscape.html
+- pal-hockey.html
+- ontario-hockey.html
+- quebec-hockey.html
+- pwhl-intelligence.html
 
-Added `serge-gervais.html` and linked Serge Gervais from the Team page.
+Pages for PAL, Ontario, Quebec and PWHL are explicitly labeled as frameworks/capabilities until real project data or formal engagements exist.
+
+## Publishing
+Upload all files in this folder to the root of the GitHub Pages repository and overwrite matching files.
