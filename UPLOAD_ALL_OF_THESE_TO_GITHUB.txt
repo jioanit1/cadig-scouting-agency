@@ -1,0 +1,12 @@
+CADIG COMPLETE WEBSITE — UNIFIED 5 TEAM PROFILE BACKGROUNDS
+
+Upload ALL files in this folder to the root of the GitHub repository and replace matching files.
+
+The five profile pages now share the same background treatment and visual system:
+- Serge Gervais
+- Kevin Davison
+- Michael Canfield
+- Nolan Ambrosino
+- Justin Ioanitescu
+
+Individual photos, bios, roles, bullet points and contact details remain page-specific.
